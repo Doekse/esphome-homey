@@ -1,0 +1,7 @@
+# Local/dev artifacts. Homey CLI packs from this file, not .gitignore.
+python-runner-dev.tar
+scripts/
+
+# Bytecode copied from a local run; not needed on Homey.
+__pycache__/
+*.py[cod]

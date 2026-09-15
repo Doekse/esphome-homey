@@ -16,9 +16,6 @@
 # Local helper scripts (not part of the Homey app)
 /scripts/
 
-# Everything esphome-homey writes is committed on purpose. It is copied from an
-# installed homey-esphomedriver, so a stale sync tool can silently downgrade the
-# pair/repair views; tracking it makes that show up as a diff before publishing.
 
 # Python
 __pycache__/

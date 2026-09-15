@@ -1,4 +1,7 @@
 {
+  "0.4.3": {
+    "en": "Greatly reduced the installed app size"
+  },
   "0.4.2": {
     "en": "Fixed the outdated pairing and repair views"
   },
