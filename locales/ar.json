@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "إصلاح الجهاز",
       "subtitle": "أدخل عنوان IP أو اسم المضيف لهذا الجهاز."
+    },
+    "maintenance": {
+      "title": "الصيانة",
+      "subtitle": "أصلح الجهاز أو اعرض مفتاح التشفير.",
+      "repair": "إصلاح الجهاز",
+      "show_key": "عرض المفتاح",
+      "repair_hint": "غيّر عنوان IP أو مفتاح التشفير",
+      "show_key_hint": "اعرض مفتاح التشفير أو انسخه"
+    },
+    "show_key": {
+      "title": "مفتاح التشفير",
+      "subtitle": "انسخ هذا المفتاح إذا أردت إضافة الجهاز في تطبيق آخر.",
+      "label": "مفتاح التشفير",
+      "not_set": "غير معيّن",
+      "back": "رجوع",
+      "copy": "نسخ المفتاح",
+      "copied": "تم النسخ",
+      "show": "عرض المفتاح",
+      "hide": "إخفاء المفتاح"
     }
+  },
+  "warnings": {
+    "project_mismatch": "مشروع ESPHome __project__ غير مدعوم في تطبيق Homey هذا."
+  },
+  "notifications": {
+    "entities_changed": "لدى __device__ كيانات جديدة: __added__.",
+    "entities_changed_removed": "تغيّرت كيانات __device__: أُضيف __added__ وحُذف __removed__. ربما تود مراجعة Flows.",
+    "entities_removed": "حُذفت كيانات من __device__: __removed__. ربما تود مراجعة Flows."
   }
 }

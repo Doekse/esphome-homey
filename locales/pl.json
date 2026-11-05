@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Napraw urządzenie",
       "subtitle": "Wprowadź adres IP lub nazwę hosta tego urządzenia."
+    },
+    "maintenance": {
+      "title": "Konserwacja",
+      "subtitle": "Napraw urządzenie lub pokaż klucz szyfrowania.",
+      "repair": "Napraw urządzenie",
+      "show_key": "Pokaż klucz",
+      "repair_hint": "Zmień adres IP lub klucz szyfrowania",
+      "show_key_hint": "Zobacz lub skopiuj klucz szyfrowania"
+    },
+    "show_key": {
+      "title": "Klucz szyfrowania",
+      "subtitle": "Skopiuj ten klucz, jeśli chcesz dodać to urządzenie w innej aplikacji.",
+      "label": "Klucz szyfrowania",
+      "not_set": "Nie ustawiono",
+      "back": "Wstecz",
+      "copy": "Kopiuj klucz",
+      "copied": "Skopiowano",
+      "show": "Pokaż klucz",
+      "hide": "Ukryj klucz"
     }
+  },
+  "warnings": {
+    "project_mismatch": "Projekt ESPHome __project__ nie jest obsługiwany przez tę aplikację Homey."
+  },
+  "notifications": {
+    "entities_changed": "__device__ ma nowe encje: __added__.",
+    "entities_changed_removed": "Na __device__ dodano __added__ i usunięto __removed__. Może warto sprawdzić swoje Flows.",
+    "entities_removed": "Na __device__ usunięto __removed__. Może warto sprawdzić swoje Flows."
   }
 }

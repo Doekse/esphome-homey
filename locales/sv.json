@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Reparera enheten",
       "subtitle": "Ange IP-adressen eller värdnamnet för den här enheten."
+    },
+    "maintenance": {
+      "title": "Underhåll",
+      "subtitle": "Reparera enheten eller visa krypteringsnyckeln.",
+      "repair": "Reparera enhet",
+      "show_key": "Visa nyckel",
+      "repair_hint": "Ändra IP-adressen eller krypteringsnyckeln",
+      "show_key_hint": "Visa eller kopiera krypteringsnyckeln"
+    },
+    "show_key": {
+      "title": "Krypteringsnyckel",
+      "subtitle": "Kopiera den här nyckeln om du vill lägga till enheten i en annan app.",
+      "label": "Krypteringsnyckel",
+      "not_set": "Inte angiven",
+      "back": "Tillbaka",
+      "copy": "Kopiera nyckel",
+      "copied": "Kopierad",
+      "show": "Visa nyckel",
+      "hide": "Dölj nyckel"
     }
+  },
+  "warnings": {
+    "project_mismatch": "ESPHome-projektet __project__ stöds inte av den här Homey-appen."
+  },
+  "notifications": {
+    "entities_changed": "__device__ har __added__ nya entiteter.",
+    "entities_changed_removed": "__device__ lade till __added__ entiteter och tog bort __removed__. Du kanske vill kolla dina Flows.",
+    "entities_removed": "__device__ tog bort __removed__ entiteter. Du kanske vill kolla dina Flows."
   }
 }

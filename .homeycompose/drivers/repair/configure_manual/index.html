@@ -46,6 +46,9 @@
 
   .__private__homey-login-credentials__footer {
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--homey-su-2);
   }
 
   #login-credentials-title {
@@ -145,6 +148,12 @@
         data-i18n="pair.configure_manual.connect"
         type="submit"
       ></button>
+      <button
+        type="button"
+        class="homey-button-secondary-shadow-full"
+        id="btn-back"
+        data-i18n="repair.show_key.back"
+      ></button>
     </div>
   </form>
 </div>
@@ -157,6 +166,11 @@
     var $macGroup = document.getElementById('mac-group');
 
     Homey.setTitle(null);
+
+    // Homey Previous is off (`navigation: false`).
+    document.getElementById('btn-back').addEventListener('click', function () {
+      Homey.showView('maintenance');
+    });
 
     function applyPrefill(data) {
       if (!data) return;

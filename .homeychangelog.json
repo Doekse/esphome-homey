@@ -1,4 +1,7 @@
 {
+  "0.5.0": {
+    "en": "Devices now pick up firmware entity changes on their own. Homey now sets an encryption key for devices that don't have one, and Repair can show it"
+  },
   "0.4.3": {
     "en": "Greatly reduced the installed app size"
   },

@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "기기 복구하기",
       "subtitle": "이 기기의 IP 주소 또는 호스트 이름을 입력하세요."
+    },
+    "maintenance": {
+      "title": "유지관리",
+      "subtitle": "기기를 복구하거나 암호화 키를 볼 수 있어요.",
+      "repair": "기기 복구하기",
+      "show_key": "키 보기",
+      "repair_hint": "IP 주소나 암호화 키를 변경하세요",
+      "show_key_hint": "암호화 키를 확인하거나 복사하세요"
+    },
+    "show_key": {
+      "title": "암호화 키",
+      "subtitle": "다른 앱에 이 기기를 추가하려면 이 키를 복사하세요.",
+      "label": "암호화 키",
+      "not_set": "설정되지 않음",
+      "back": "뒤로",
+      "copy": "키 복사",
+      "copied": "복사됨",
+      "show": "키 보기",
+      "hide": "키 숨기기"
     }
+  },
+  "warnings": {
+    "project_mismatch": "ESPHome 프로젝트 __project__는 이 Homey 앱에서 지원되지 않아요."
+  },
+  "notifications": {
+    "entities_changed": "__device__에 새 엔티티 __added__개가 생겼어요.",
+    "entities_changed_removed": "__device__에서 엔티티 __added__개가 추가되고 __removed__개가 제거됐어요. Flow를 한번 확인해 보셔도 좋겠어요.",
+    "entities_removed": "__device__에서 엔티티 __removed__개가 제거됐어요. Flow를 한번 확인해 보셔도 좋겠어요."
   }
 }

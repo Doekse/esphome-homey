@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Gerät reparieren",
       "subtitle": "Gib die IP-Adresse oder den Hostnamen dieses Geräts ein."
+    },
+    "maintenance": {
+      "title": "Wartung",
+      "subtitle": "Repariere das Gerät oder zeige den Verschlüsselungsschlüssel.",
+      "repair": "Gerät reparieren",
+      "show_key": "Schlüssel anzeigen",
+      "repair_hint": "Ändere die IP-Adresse oder den Verschlüsselungsschlüssel",
+      "show_key_hint": "Sieh dir den Verschlüsselungsschlüssel an oder kopiere ihn"
+    },
+    "show_key": {
+      "title": "Verschlüsselungsschlüssel",
+      "subtitle": "Kopiere diesen Schlüssel, wenn du das Gerät in einer anderen App hinzufügen möchtest.",
+      "label": "Verschlüsselungsschlüssel",
+      "not_set": "Nicht gesetzt",
+      "back": "Zurück",
+      "copy": "Schlüssel kopieren",
+      "copied": "Kopiert",
+      "show": "Schlüssel anzeigen",
+      "hide": "Schlüssel ausblenden"
     }
+  },
+  "warnings": {
+    "project_mismatch": "Das ESPHome-Projekt __project__ wird von dieser Homey-App nicht unterstützt."
+  },
+  "notifications": {
+    "entities_changed": "__device__ hat __added__ neue Entitäten.",
+    "entities_changed_removed": "__device__ hat __added__ Entitäten hinzugefügt und __removed__ entfernt. Vielleicht solltest du deine Flows prüfen.",
+    "entities_removed": "Von __device__ wurden __removed__ Entitäten entfernt. Vielleicht solltest du deine Flows prüfen."
   }
 }

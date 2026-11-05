@@ -5,3 +5,6 @@ scripts/
 # Bytecode copied from a local run; not needed on Homey.
 __pycache__/
 *.py[cod]
+
+# macOS Finder metadata
+.DS_Store

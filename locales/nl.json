@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Apparaat repareren",
       "subtitle": "Voer het IP-adres of de hostnaam van dit apparaat in."
+    },
+    "maintenance": {
+      "title": "Onderhoud",
+      "subtitle": "Repareer het apparaat of toon de encryptiesleutel.",
+      "repair": "Apparaat repareren",
+      "show_key": "Sleutel tonen",
+      "repair_hint": "Wijzig het IP-adres of de encryptiesleutel",
+      "show_key_hint": "Bekijk of kopieer de encryptiesleutel"
+    },
+    "show_key": {
+      "title": "Encryptiesleutel",
+      "subtitle": "Kopieer deze sleutel als je dit apparaat in een andere app wilt toevoegen.",
+      "label": "Encryptiesleutel",
+      "not_set": "Niet ingesteld",
+      "back": "Terug",
+      "copy": "Sleutel kopiëren",
+      "copied": "Gekopieerd",
+      "show": "Sleutel tonen",
+      "hide": "Sleutel verbergen"
     }
+  },
+  "warnings": {
+    "project_mismatch": "ESPHome-project __project__ wordt niet ondersteund door deze Homey-app."
+  },
+  "notifications": {
+    "entities_changed": "Op __device__ zijn __added__ nieuwe entities bijgekomen.",
+    "entities_changed_removed": "Op __device__ zijn __added__ entities toegevoegd en __removed__ verwijderd. Misschien moet je je Flows even nalopen.",
+    "entities_removed": "Op __device__ zijn __removed__ entities verwijderd. Misschien moet je je Flows even nalopen."
   }
 }

@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Réparer l’appareil",
       "subtitle": "Saisis l’adresse IP ou le nom d’hôte de cet appareil."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "subtitle": "Répare l’appareil ou affiche la clé de chiffrement.",
+      "repair": "Réparer l’appareil",
+      "show_key": "Afficher la clé",
+      "repair_hint": "Modifie l’adresse IP ou la clé de chiffrement",
+      "show_key_hint": "Consulte ou copie la clé de chiffrement"
+    },
+    "show_key": {
+      "title": "Clé de chiffrement",
+      "subtitle": "Copie cette clé si tu veux ajouter cet appareil dans une autre application.",
+      "label": "Clé de chiffrement",
+      "not_set": "Non définie",
+      "back": "Retour",
+      "copy": "Copier la clé",
+      "copied": "Copiée",
+      "show": "Afficher la clé",
+      "hide": "Masquer la clé"
     }
+  },
+  "warnings": {
+    "project_mismatch": "Le projet ESPHome __project__ n’est pas pris en charge par cette application Homey."
+  },
+  "notifications": {
+    "entities_changed": "__device__ a __added__ nouvelles entités.",
+    "entities_changed_removed": "__device__ a ajouté __added__ entités et en a retiré __removed__. Vous devriez peut-être vérifier vos Flows.",
+    "entities_removed": "__device__ a retiré __removed__ entités. Vous devriez peut-être vérifier vos Flows."
   }
 }

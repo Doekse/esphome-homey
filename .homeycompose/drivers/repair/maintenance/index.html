@@ -1,0 +1,116 @@
+<style>
+  @import '/css/deprecated-login-credentials.css';
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+  }
+
+  .__private__homey-login-credentials {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .__private__homey-login-credentials__form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .__private__homey-login-credentials__center {
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .maintenance-actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--homey-su-4);
+    margin-top: var(--homey-su-4);
+  }
+
+  .maintenance-action {
+    display: flex;
+    flex-direction: column;
+    gap: var(--homey-su-1);
+  }
+
+  .maintenance-hint {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--homey-color-mono-400, #8a8a8a);
+  }
+</style>
+
+<div class="__private__homey-login-credentials">
+  <div class="__private__homey-login-credentials__form homey-form">
+    <div class="__private__homey-login-credentials__center">
+      <h1
+        class="homey-title homey-text-align-center"
+        data-i18n="repair.maintenance.title"
+      ></h1>
+      <p
+        class="homey-subtitle homey-text-align-center"
+        data-i18n="repair.maintenance.subtitle"
+      ></p>
+
+      <div class="maintenance-actions">
+        <div class="maintenance-action">
+          <button
+            type="button"
+            class="homey-button-primary-shadow-full"
+            id="btn-repair"
+            data-i18n="repair.maintenance.repair"
+          ></button>
+          <p
+            class="maintenance-hint"
+            data-i18n="repair.maintenance.repair_hint"
+          ></p>
+        </div>
+        <div class="maintenance-action">
+          <button
+            type="button"
+            class="homey-button-primary-shadow-full"
+            id="btn-show-key"
+            data-i18n="repair.maintenance.show_key"
+          ></button>
+          <p
+            class="maintenance-hint"
+            data-i18n="repair.maintenance.show_key_hint"
+          ></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function () {
+    Homey.setTitle(null);
+
+    document.getElementById('btn-repair').addEventListener('click', function () {
+      Homey.showView('configure_manual');
+    });
+    document.getElementById('btn-show-key').addEventListener('click', function () {
+      Homey.showView('show_key');
+    });
+  })();
+</script>

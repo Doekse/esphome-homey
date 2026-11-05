@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Ripara il dispositivo",
       "subtitle": "Inserisci l’indirizzo IP o il nome host di questo dispositivo."
+    },
+    "maintenance": {
+      "title": "Manutenzione",
+      "subtitle": "Ripara il dispositivo o mostra la chiave di crittografia.",
+      "repair": "Ripara dispositivo",
+      "show_key": "Mostra chiave",
+      "repair_hint": "Modifica l’indirizzo IP o la chiave di crittografia",
+      "show_key_hint": "Visualizza o copia la chiave di crittografia"
+    },
+    "show_key": {
+      "title": "Chiave di crittografia",
+      "subtitle": "Copia questa chiave se vuoi aggiungere questo dispositivo in un’altra app.",
+      "label": "Chiave di crittografia",
+      "not_set": "Non impostata",
+      "back": "Indietro",
+      "copy": "Copia chiave",
+      "copied": "Copiata",
+      "show": "Mostra chiave",
+      "hide": "Nascondi chiave"
     }
+  },
+  "warnings": {
+    "project_mismatch": "Il progetto ESPHome __project__ non è supportato da questa app Homey."
+  },
+  "notifications": {
+    "entities_changed": "__device__ ha __added__ nuove entità.",
+    "entities_changed_removed": "__device__ ha aggiunto __added__ entità e ne ha rimosso __removed__. Forse ti conviene controllare i tuoi Flow.",
+    "entities_removed": "__device__ ha rimosso __removed__ entità. Forse ti conviene controllare i tuoi Flow."
   }
 }

@@ -1,27 +1,27 @@
 {
   "pair": {
     "configure_manual": {
-      "title": "Enter IP address",
-      "hostLabel": "IP address or hostname",
+      "title": "Enter IP Address",
+      "hostLabel": "IP Address or Hostname",
       "hostPlaceholder": "192.168.1.100 or device.local",
       "portLabel": "Port",
       "portPlaceholder": "6053",
       "connect": "Connect",
-      "macLabel": "MAC address"
+      "macLabel": "MAC Address"
     },
     "enter_wifi": {
       "title": "Connect to Wi-Fi",
       "subtitle": "Enter the Wi-Fi network this device should join.",
       "ssid": "Network SSID",
-      "password_optional": "Wi-Fi password (optional)"
+      "password_optional": "Wi-Fi Password (Optional)"
     },
     "enter_key": {
-      "title": "Encryption key",
+      "title": "Encryption Key",
       "subtitle": "This ESPHome device requires an encryption key.",
-      "key": "Encryption key"
+      "key": "Encryption Key"
     },
     "add_device": {
-      "title": "Adding device"
+      "title": "Adding Device"
     },
     "list": {
       "add_by_ip": "Add by IP…",
@@ -73,8 +73,35 @@
   "nativeAppSuggestion": "Good news! This device has its own app! Search in the Homey App Store for __appName__.",
   "repair": {
     "configure_manual": {
-      "title": "Repair the device",
+      "title": "Repair the Device",
       "subtitle": "Enter the IP address or hostname of this device."
+    },
+    "maintenance": {
+      "title": "Maintenance",
+      "subtitle": "Repair the device or show the encryption key.",
+      "repair": "Repair Device",
+      "show_key": "Show Key",
+      "repair_hint": "Change the IP address or encryption key",
+      "show_key_hint": "View or copy the encryption key"
+    },
+    "show_key": {
+      "title": "Encryption Key",
+      "subtitle": "Copy this key if you want to add this device in another app.",
+      "label": "Encryption Key",
+      "not_set": "Not Set",
+      "back": "Back",
+      "copy": "Copy Key",
+      "copied": "Copied",
+      "show": "Show Key",
+      "hide": "Hide Key"
     }
+  },
+  "warnings": {
+    "project_mismatch": "This ESPHome project (__project__) is not supported by this Homey app."
+  },
+  "notifications": {
+    "entities_changed": "__device__ has __added__ new entities.",
+    "entities_changed_removed": "__device__ added __added__ entities and removed __removed__. You might want to check your Flows.",
+    "entities_removed": "__device__ removed __removed__ entities. You might want to check your Flows."
   }
 }

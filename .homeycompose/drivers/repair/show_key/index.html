@@ -1,0 +1,282 @@
+<style>
+  @import '/css/deprecated-login-credentials.css';
+
+  html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    margin: 0;
+  }
+
+  .__private__homey-login-credentials {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .__private__homey-login-credentials__form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 0;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .__private__homey-login-credentials__center {
+    width: 100%;
+    flex-shrink: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  .pair-view-flex-spacer {
+    flex-grow: 1;
+    flex-shrink: 0;
+    min-height: var(--homey-su-2);
+  }
+
+  .__private__homey-login-credentials__footer {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: var(--homey-su-2);
+  }
+
+  .homey-form-input-large.read-only-input {
+    background-color: #e9ecef !important;
+    color: #6c757d !important;
+    border-color: #ced4da !important;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px !important;
+    pointer-events: none !important;
+  }
+
+  .icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45em;
+  }
+
+  .icon-button svg {
+    width: 1.1em;
+    height: 1.1em;
+    flex-shrink: 0;
+  }
+
+  /* Homey ignores HTML hidden on button SVGs; class + !important is what toggles. */
+  #icon-eye-off,
+  #btn-toggle-key.is-revealed #icon-eye {
+    display: none !important;
+  }
+
+  #btn-toggle-key.is-revealed #icon-eye-off {
+    display: block !important;
+  }
+</style>
+
+<div class="__private__homey-login-credentials">
+  <div class="__private__homey-login-credentials__form homey-form">
+    <div class="__private__homey-login-credentials__center">
+      <h1
+        class="homey-title homey-text-align-center"
+        data-i18n="repair.show_key.title"
+      ></h1>
+      <p
+        class="homey-subtitle homey-text-align-center"
+        data-i18n="repair.show_key.subtitle"
+      ></p>
+
+      <div class="homey-form-group-large">
+        <label
+          class="homey-form-label"
+          for="device-key"
+          data-i18n="repair.show_key.label"
+        ></label>
+        <input
+          class="homey-form-input-large read-only-input"
+          id="device-key"
+          type="text"
+          value=""
+          readonly
+          tabindex="-1"
+          autocomplete="off"
+          autocapitalize="off"
+          spellcheck="false"
+        />
+      </div>
+    </div>
+
+    <div class="pair-view-flex-spacer" aria-hidden="true"></div>
+
+    <div class="__private__homey-login-credentials__footer">
+      <button
+        type="button"
+        class="homey-button-primary-shadow-full icon-button is-disabled"
+        id="btn-copy"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+          <path
+            d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+          ></path>
+        </svg>
+        <span id="btn-copy-label" data-i18n="repair.show_key.copy"></span>
+      </button>
+      <button
+        type="button"
+        class="homey-button-primary-shadow-full icon-button is-disabled"
+        id="btn-toggle-key"
+      >
+        <svg
+          id="icon-eye"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5C21.27 7.61 17 4.5 12 4.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
+          ></path>
+        </svg>
+        <svg
+          id="icon-eye-off"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <path
+            fill="currentColor"
+            d="M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78 3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
+          ></path>
+        </svg>
+        <span id="btn-toggle-label" data-i18n="repair.show_key.show"></span>
+      </button>
+      <button
+        type="button"
+        class="homey-button-secondary-shadow-full"
+        id="btn-back"
+        data-i18n="repair.show_key.back"
+      ></button>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  (function () {
+    var AFFIX_LEN = 4;
+    var MASK_DOTS = 16;
+    var $key = document.getElementById('device-key');
+    var $toggle = document.getElementById('btn-toggle-key');
+    var $toggleLabel = document.getElementById('btn-toggle-label');
+    var $copy = document.getElementById('btn-copy');
+    var $copyLabel = document.getElementById('btn-copy-label');
+    var notSet = Homey.__('repair.show_key.not_set');
+    var copyLabel = Homey.__('repair.show_key.copy');
+    var copiedLabel = Homey.__('repair.show_key.copied');
+    var showLabel = Homey.__('repair.show_key.show');
+    var hideLabel = Homey.__('repair.show_key.hide');
+    var psk = '';
+    var revealed = false;
+    var copiedTimer;
+
+    Homey.setTitle(null);
+
+    /**
+     * Keep the real PSK out of the visible field so a select/copy of
+     * the MAC-styled input cannot leak it.
+     */
+    function maskKey(value) {
+      if (!value) return notSet;
+      if (value.length <= AFFIX_LEN * 2) return value;
+      return (
+        value.slice(0, AFFIX_LEN) +
+        '•'.repeat(MASK_DOTS) +
+        value.slice(-AFFIX_LEN)
+      );
+    }
+
+    function renderKey() {
+      var showPlain = Boolean(psk) && revealed;
+      $key.value = showPlain ? psk : maskKey(psk);
+      $toggle.classList.toggle('is-revealed', showPlain);
+      $toggleLabel.textContent = showPlain ? hideLabel : showLabel;
+    }
+
+    function setActionsEnabled(enabled) {
+      $copy.classList.toggle('is-disabled', !enabled);
+      $toggle.classList.toggle('is-disabled', !enabled);
+    }
+
+    /**
+     * Homey webviews often lack navigator.clipboard.
+     */
+    function fallbackCopy(value) {
+      var ta = document.createElement('textarea');
+      ta.value = value;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.left = '-9999px';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = document.execCommand('copy');
+      document.body.removeChild(ta);
+      return ok;
+    }
+
+    function markCopied() {
+      $copyLabel.textContent = copiedLabel;
+      clearTimeout(copiedTimer);
+      copiedTimer = setTimeout(function () {
+        $copyLabel.textContent = copyLabel;
+      }, 1500);
+    }
+
+    Homey.emit('get_key')
+      .then(function (data) {
+        psk = data && data.noise_psk ? String(data.noise_psk).trim() : '';
+        renderKey();
+        setActionsEnabled(Boolean(psk));
+      })
+      .catch(function (err) {
+        Homey.alert(err);
+      });
+
+    $toggle.addEventListener('click', function () {
+      if (!psk || $toggle.classList.contains('is-disabled')) return;
+      revealed = !revealed;
+      renderKey();
+    });
+
+    $copy.addEventListener('click', function () {
+      if (!psk || $copy.classList.contains('is-disabled')) return;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(psk).then(markCopied).catch(function () {
+          if (fallbackCopy(psk)) markCopied();
+        });
+        return;
+      }
+      if (fallbackCopy(psk)) markCopied();
+    });
+
+    // Homey Previous is off (`navigation: false`).
+    document.getElementById('btn-back').addEventListener('click', function () {
+      Homey.showView('maintenance');
+    });
+  })();
+</script>

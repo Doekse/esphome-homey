@@ -75,6 +75,33 @@
     "configure_manual": {
       "title": "Reparar el dispositivo",
       "subtitle": "Introduce la dirección IP o el nombre de host de este dispositivo."
+    },
+    "maintenance": {
+      "title": "Mantenimiento",
+      "subtitle": "Repara el dispositivo o muestra la clave de cifrado.",
+      "repair": "Reparar dispositivo",
+      "show_key": "Mostrar clave",
+      "repair_hint": "Cambia la dirección IP o la clave de cifrado",
+      "show_key_hint": "Consulta o copia la clave de cifrado"
+    },
+    "show_key": {
+      "title": "Clave de cifrado",
+      "subtitle": "Copia esta clave si quieres añadir este dispositivo en otra aplicación.",
+      "label": "Clave de cifrado",
+      "not_set": "No configurada",
+      "back": "Atrás",
+      "copy": "Copiar clave",
+      "copied": "Copiada",
+      "show": "Mostrar clave",
+      "hide": "Ocultar clave"
     }
+  },
+  "warnings": {
+    "project_mismatch": "El proyecto de ESPHome __project__ no es compatible con esta app de Homey."
+  },
+  "notifications": {
+    "entities_changed": "__device__ tiene __added__ entidades nuevas.",
+    "entities_changed_removed": "__device__ añadió __added__ entidades y eliminó __removed__. Quizá quieras revisar tus Flows.",
+    "entities_removed": "__device__ eliminó __removed__ entidades. Quizá quieras revisar tus Flows."
   }
 }
