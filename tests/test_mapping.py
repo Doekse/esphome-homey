@@ -11,9 +11,12 @@ import pytest
 from aioesphomeapi import (
     BinarySensorInfo,
     ButtonInfo,
+    CoverInfo,
     EntityCategory,
     EntityInfo,
     FanInfo,
+    MediaPlayerEntityFeature,
+    MediaPlayerInfo,
     SwitchInfo,
     TemperatureUnit,
 )
@@ -221,6 +224,45 @@ def test_binary_sensor_never_maps_to_a_settable_capability(
     capabilities = mapped_device(entity)["capabilities"]
     assert expected in capabilities
     assert not {capability_base(c) for c in capabilities} & SETTABLE
+
+
+@pytest.mark.parametrize(
+    ("device_class", "supports_position", "closed"),
+    [
+        ("shutter", False, "windowcoverings_closed"),
+        ("shutter", True, None),
+        ("garage", False, "garagedoor_closed"),
+    ],
+)
+def test_cover_shows_closed_without_a_position(
+    device_class: str, supports_position: bool, closed: str | None
+) -> None:
+    entity = CoverInfo(
+        object_id="cover",
+        key=1,
+        name="Cover",
+        device_class=device_class,
+        supports_position=supports_position,
+    )
+    capabilities = mapped_device(entity)["capabilities"]
+    found = [c for c in capabilities if c.endswith("_closed")]
+    assert found == ([closed] if closed else [])
+
+
+@pytest.mark.parametrize(
+    ("flags", "has_onoff"),
+    [
+        (MediaPlayerEntityFeature.TURN_ON | MediaPlayerEntityFeature.TURN_OFF, True),
+        (MediaPlayerEntityFeature.PAUSE, False),
+    ],
+)
+def test_media_player_turns_on_and_off_when_it_can(
+    flags: MediaPlayerEntityFeature, has_onoff: bool
+) -> None:
+    entity = MediaPlayerInfo(
+        object_id="speaker", key=1, name="Speaker", feature_flags=flags
+    )
+    assert ("onoff" in mapped_device(entity)["capabilities"]) is has_onoff
 
 
 def test_fan_oscillation_is_homeys_oscillating() -> None:

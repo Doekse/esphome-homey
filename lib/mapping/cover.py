@@ -62,3 +62,8 @@ class CoverEntityMapper:
             DeviceEntityMapper.add_capability(
                 homey_device, info.key, "garagedoor_closed"
             )
+        elif not info.supports_position:
+            # Without a position slider, this shows whether it is open.
+            DeviceEntityMapper.add_capability(
+                homey_device, info.key, "windowcoverings_closed"
+            )

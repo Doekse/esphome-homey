@@ -38,6 +38,10 @@ class MediaPlayerEntityMapper:
                 | MediaPlayerEntityFeature.VOLUME_SET
                 | MediaPlayerEntityFeature.VOLUME_MUTE
             )
+        if flags & (
+            MediaPlayerEntityFeature.TURN_ON | MediaPlayerEntityFeature.TURN_OFF
+        ):
+            DeviceEntityMapper.add_indexed(homey_device, info.key, "onoff")
         DeviceEntityMapper.add_capability(homey_device, info.key, "speaker_playing")
 
         for feature, capabilities in (
