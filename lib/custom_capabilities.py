@@ -2,7 +2,7 @@
 
 homey-esphomedriver knows Homey's system capabilities. The generic app also
 shows entities as ``esphome_*`` capabilities, a few extra Homey-style ones
-(``thermostat_preset``, ``light_effect``, ``fan_oscillate`` …) and event
+(``thermostat_preset``, ``light_effect``, ``open`` …) and event
 capabilities. Their parsers live here and are passed to
 ``register_capability``.
 """
@@ -92,18 +92,6 @@ def _set_effect(
     return {"state": True, "effect": str(value)}
 
 
-def _report_oscillating(state: Any, entity: BoundEntity) -> bool:
-    del entity
-    return bool(state.oscillating)
-
-
-def _set_oscillating(
-    value: Any, opts: Mapping[str, Any], entity: BoundEntity
-) -> dict[str, Any]:
-    del opts, entity
-    return {"oscillating": bool(value)}
-
-
 def _report_triggered(state: Any, entity: BoundEntity) -> bool:
     del entity
     return bool(state.state == AlarmControlPanelState.TRIGGERED)
@@ -140,7 +128,6 @@ def _report_text(state: Any, entity: BoundEntity) -> str:
 _PARSERS: dict[str, tuple[ReportParser | None, SetParser | None]] = {
     "thermostat_preset": (_report_preset, _set_preset),
     "light_effect": (_report_effect, _set_effect),
-    "fan_oscillate": (_report_oscillating, _set_oscillating),
     "alarm_triggered": (_report_triggered, None),
     "open": (None, _set_open),
     "measure_uptime": (_report_uptime, None),

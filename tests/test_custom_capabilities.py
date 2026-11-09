@@ -77,7 +77,7 @@ def test_climate_preset_reads_and_sets_named_and_custom_presets() -> None:
     assert setter("Night", {}, entity) == {"custom_preset": "Night"}
 
 
-def test_light_effect_fan_oscillate_and_lock_open() -> None:
+def test_light_effect_and_lock_open() -> None:
     custom, device, _flow = _custom()
     light = _entity(device, LightInfo())
     effect = custom.parsers("light_effect", "light")
@@ -86,10 +86,6 @@ def test_light_effect_fan_oscillate_and_lock_open() -> None:
         "state": True,
         "effect": "Rainbow",
     }
-    fan = _entity(device, FanInfo())
-    oscillate = custom.parsers("fan_oscillate", "fan")
-    assert oscillate["report_parser"](FanState(oscillating=True), fan) is True
-    assert oscillate["set_parser"](False, {}, fan) == {"oscillating": False}
     lock = _entity(device, LockInfo())
     assert custom.parsers("open", "lock")["set_parser"](True, {}, lock) == {
         "command": LockCommand.OPEN

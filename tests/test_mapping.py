@@ -13,6 +13,7 @@ from aioesphomeapi import (
     ButtonInfo,
     EntityCategory,
     EntityInfo,
+    FanInfo,
     SwitchInfo,
     TemperatureUnit,
 )
@@ -220,3 +221,8 @@ def test_binary_sensor_never_maps_to_a_settable_capability(
     capabilities = mapped_device(entity)["capabilities"]
     assert expected in capabilities
     assert not {capability_base(c) for c in capabilities} & SETTABLE
+
+
+def test_fan_oscillation_is_homeys_oscillating() -> None:
+    entity = FanInfo(object_id="fan", key=1, name="Fan", supports_oscillation=True)
+    assert "oscillating" in mapped_device(entity)["capabilities"]

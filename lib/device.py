@@ -23,6 +23,10 @@ if TYPE_CHECKING:
     from lib.driver import GenericEspHomeDriver
 
 
+_REPLACED = frozenset({"fan_oscillate"})
+"""This app's own capabilities that a Homey capability replaced."""
+
+
 class GenericEspHomeDevice(EspHomeDevice):
     """A node paired through the generic app, with a capability per entity."""
 
@@ -123,12 +127,15 @@ class GenericEspHomeDevice(EspHomeDevice):
         """Whether the device has capabilities that pairing no longer maps.
 
         Refresh swaps them for the current ones. Devices paired before 0.6
-        have garage door and lock binary sensors as ``garagedoor_closed`` and
-        ``locked`` toggles, which the library does not bind to an entity that
-        only reports.
+        have ``fan_oscillate`` where Homey now has ``oscillating``, and garage
+        door and lock binary sensors as ``garagedoor_closed`` and ``locked``
+        toggles, which the library no longer binds to an entity that only
+        reports.
         """
         for capability_id, options in self._capabilities_options.items():
             base = capability_base(capability_id)
+            if base in _REPLACED:
+                return True
             domain = (options or {}).get("entity_type")
             if domain is not None and reports_only(str(domain)) and base in SETTABLE:
                 return True

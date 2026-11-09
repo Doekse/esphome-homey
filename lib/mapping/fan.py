@@ -36,7 +36,7 @@ class FanEntityMapper:
             )
 
         if info.supports_oscillation:
-            DeviceEntityMapper.add_capability(homey_device, info.key, "fan_oscillate")
+            DeviceEntityMapper.add_capability(homey_device, info.key, "oscillating")
 
         presets = [mode for mode in info.supported_preset_modes if mode]
         if not presets:

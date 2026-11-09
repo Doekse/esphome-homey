@@ -65,11 +65,6 @@ class DriverFlowHandler:
         self._action_press("identify", "identify")
         self._action_press("open", "open")
         self._action_set("aircleaner_mode_set", "aircleaner_mode", "aircleaner_mode")
-        self._action_press("fan_oscillate_on", "fan_oscillate", True)
-        self._action_press("fan_oscillate_off", "fan_oscillate", False)
-        flow.get_action_card("fan_oscillate_toggle").register_run_listener(
-            self._fan_oscillate_toggle
-        )
 
         self._wire_option("light_effect")
         self._wire_option("thermostat_preset")
@@ -93,7 +88,6 @@ class DriverFlowHandler:
 
         self._condition_on("alarm_plugged_in_is", "alarm_plugged_in")
         self._condition_on("alarm_triggered_is", "alarm_triggered")
-        self._condition_on("fan_oscillate_is", "fan_oscillate")
         self._condition_value(
             "aircleaner_mode_is", "aircleaner_mode", "aircleaner_mode"
         )
@@ -233,13 +227,6 @@ class DriverFlowHandler:
         for arg_name, listener in autocomplete.items():
             card.register_argument_autocomplete_listener(arg_name, listener)
         card.register_run_listener(run)
-
-    async def _fan_oscillate_toggle(self, args: dict[str, Any], **_kwargs: Any) -> Any:
-        device = args["device"]
-        return await device.trigger_capability_listener(
-            "fan_oscillate",
-            not device.get_capability_value("fan_oscillate"),
-        )
 
     async def _esphome_number_set(self, args: dict[str, Any], **_kwargs: Any) -> Any:
         return await args["device"].trigger_capability_listener(

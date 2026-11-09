@@ -129,6 +129,11 @@ def test_sensors_shown_as_controls_are_refreshed_on_connect() -> None:
     device._capability_handler.refresh.assert_awaited_once()
 
 
+def test_fan_oscillate_is_outdated() -> None:
+    device = _device({"fan_oscillate": {"key": 1, "entity_type": "fan", "name": "Fan"}})
+    assert device._has_outdated_capabilities() is True
+
+
 def test_capabilities_that_only_show_a_value_are_left_alone() -> None:
     device = _device(
         {
