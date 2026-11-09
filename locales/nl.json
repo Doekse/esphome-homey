@@ -68,7 +68,9 @@
       "ssid_too_long": "SSID of wachtwoord is te lang",
       "invalid_value": "Improv-apparaat stuurde een ongeldige waarde"
     },
-    "project_not_supported": "Dit ESPHome-project wordt niet ondersteund door deze Homey-app."
+    "project_not_supported": "Dit ESPHome-project wordt niet ondersteund door deze Homey-app.",
+    "setting_invalid": "Deze waarde is niet geldig voor het apparaat.",
+    "entity_missing": "Dit apparaat heeft geen __domain__ met de naam __name__."
   },
   "nativeAppSuggestion": "Goed nieuws! Dit apparaat heeft een eigen app! Zoek in de Homey App Store naar __appName__.",
   "repair": {
@@ -103,5 +105,8 @@
     "entities_changed": "Op __device__ zijn __added__ nieuwe entities bijgekomen.",
     "entities_changed_removed": "Op __device__ zijn __added__ entities toegevoegd en __removed__ verwijderd. Misschien moet je je Flows even nalopen.",
     "entities_removed": "Op __device__ zijn __removed__ entities verwijderd. Misschien moet je je Flows even nalopen."
+  },
+  "settings": {
+    "applied_on_wake": "Opgeslagen. Het apparaat slaapt en krijgt de nieuwe instelling zodra het weer wakker wordt."
   }
 }

@@ -1,3 +1,3 @@
-from homey_esphomedriver import EspHomeDevice
+from lib.device import GenericEspHomeDevice
 
-homey_export = EspHomeDevice
+homey_export = GenericEspHomeDevice

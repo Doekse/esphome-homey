@@ -8,3 +8,7 @@ __pycache__/
 
 # macOS Finder metadata
 .DS_Store
+
+# Tests and tooling; not part of the app.
+tests/
+ruff.toml

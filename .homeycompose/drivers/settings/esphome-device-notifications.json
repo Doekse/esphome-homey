@@ -1,0 +1,56 @@
+{
+  "id": "notifications",
+  "type": "group",
+  "label": {
+    "en": "Notifications",
+    "ar": "الإشعارات",
+    "da": "Notifikationer",
+    "de": "Benachrichtigungen",
+    "es": "Notificaciones",
+    "fr": "Notifications",
+    "it": "Notifiche",
+    "ko": "알림",
+    "nl": "Meldingen",
+    "no": "Varsler",
+    "pl": "Powiadomienia",
+    "ru": "Уведомления",
+    "sv": "Aviseringar"
+  },
+  "children": [
+    {
+      "id": "notify_entities_changed",
+      "type": "checkbox",
+      "label": {
+        "en": "Entity changes",
+        "ar": "تغيّرات الكيانات",
+        "da": "Entitetsændringer",
+        "de": "Entitätsänderungen",
+        "es": "Cambios de entidades",
+        "fr": "Modifications d’entités",
+        "it": "Modifiche alle entità",
+        "ko": "엔티티 변경",
+        "nl": "Entitywijzigingen",
+        "no": "Entitetsendringer",
+        "pl": "Zmiany encji",
+        "ru": "Изменения сущностей",
+        "sv": "Entitetsändringar"
+      },
+      "value": true,
+      "hint": {
+        "en": "You'll get a timeline notification when a firmware update adds or removes entities on this device.",
+        "ar": "سيصلك إشعار في الخط الزمني عندما يضيف تحديث البرمجية كيانات على هذا الجهاز أو يزيلها.",
+        "da": "Du får en tidslinjenotifikation, når en firmwareopdatering tilføjer eller fjerner entiteter på denne enhed.",
+        "de": "Du bekommst eine Timeline-Benachrichtigung, wenn ein Firmware-Update Entitäten auf diesem Gerät hinzufügt oder entfernt.",
+        "es": "Recibirás una notificación en la línea de tiempo cuando una actualización de firmware añada o elimine entidades en este dispositivo.",
+        "fr": "Vous recevrez une notification dans la timeline lorsqu’une mise à jour du firmware ajoute ou retire des entités sur cet appareil.",
+        "it": "Riceverai una notifica nella timeline quando un aggiornamento del firmware aggiunge o rimuove entità su questo dispositivo.",
+        "ko": "펌웨어 업데이트가 이 장치의 엔티티를 추가하거나 제거하면 타임라인 알림을 받습니다.",
+        "nl": "Je krijgt een tijdlijnmelding wanneer een firmware-update entities op dit apparaat toevoegt of verwijdert.",
+        "no": "Du får et tidslinjevarsel når en firmwareoppdatering legger til eller fjerner entiteter på denne enheten.",
+        "pl": "Dostaniesz powiadomienie na osi czasu, gdy aktualizacja firmware doda lub usunie encje na tym urządzeniu.",
+        "ru": "Вы получите уведомление в ленте, когда обновление прошивки добавит или удалит сущности на этом устройстве.",
+        "sv": "Du får en tidslinjeavisering när en firmwareuppdatering lägger till eller tar bort entiteter på den här enheten."
+      }
+    }
+  ]
+}

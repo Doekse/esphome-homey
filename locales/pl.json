@@ -68,7 +68,8 @@
       "ssid_too_long": "SSID lub hasło jest za długie",
       "invalid_value": "Urządzenie Improv wysłało nieprawidłową wartość"
     },
-    "project_not_supported": "Ten projekt ESPHome nie jest obsługiwany przez tę aplikację Homey."
+    "project_not_supported": "Ten projekt ESPHome nie jest obsługiwany przez tę aplikację Homey.",
+    "setting_invalid": "Ta wartość jest nieprawidłowa dla urządzenia."
   },
   "nativeAppSuggestion": "Dobre wieści! To urządzenie ma własną aplikację! Wyszukaj __appName__ w Homey App Store.",
   "repair": {
@@ -103,5 +104,8 @@
     "entities_changed": "__device__ ma nowe encje: __added__.",
     "entities_changed_removed": "Na __device__ dodano __added__ i usunięto __removed__. Może warto sprawdzić swoje Flows.",
     "entities_removed": "Na __device__ usunięto __removed__. Może warto sprawdzić swoje Flows."
+  },
+  "settings": {
+    "applied_on_wake": "Zapisano. Urządzenie jest uśpione i otrzyma nowe ustawienie, gdy się następnym razem wybudzi."
   }
 }

@@ -68,7 +68,8 @@
       "ssid_too_long": "SSID oder Passwort ist zu lang",
       "invalid_value": "Improv-Gerät hat einen ungültigen Wert gesendet"
     },
-    "project_not_supported": "Dieses ESPHome-Projekt wird von dieser Homey-App nicht unterstützt."
+    "project_not_supported": "Dieses ESPHome-Projekt wird von dieser Homey-App nicht unterstützt.",
+    "setting_invalid": "Dieser Wert ist für das Gerät nicht gültig."
   },
   "nativeAppSuggestion": "Gute Nachrichten! Dieses Gerät hat eine eigene App! Suche im Homey App Store nach __appName__.",
   "repair": {
@@ -103,5 +104,8 @@
     "entities_changed": "__device__ hat __added__ neue Entitäten.",
     "entities_changed_removed": "__device__ hat __added__ Entitäten hinzugefügt und __removed__ entfernt. Vielleicht solltest du deine Flows prüfen.",
     "entities_removed": "Von __device__ wurden __removed__ Entitäten entfernt. Vielleicht solltest du deine Flows prüfen."
+  },
+  "settings": {
+    "applied_on_wake": "Gespeichert. Das Gerät schläft und erhält die neue Einstellung, sobald es das nächste Mal aufwacht."
   }
 }
