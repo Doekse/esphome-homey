@@ -18,8 +18,8 @@ def _device(options: dict[str, Any]) -> GenericEspHomeDevice:
     device = GenericEspHomeDevice.__new__(GenericEspHomeDevice)
     device._capabilities = list(options)
     device._capabilities_options = dict(options)
-    device._custom = CustomCapabilities(device, AsyncMock())
-    device._unbound = []
+    device._custom = CustomCapabilities(device, MagicMock())
+    device._unbound = set()
     device.register_capability = MagicMock()  # type: ignore[method-assign]
     device.error = MagicMock()
 
@@ -66,7 +66,7 @@ def test_capabilities_paired_by_key_get_their_name_on_connect() -> None:
     device = _device({"onoff": {"key": 1, "entity_type": "switch"}})
     device.bind_capability("onoff")
     device.register_capability.assert_not_called()  # type: ignore[attr-defined]
-    assert device._unbound == ["onoff"]
+    assert device._unbound == {"onoff"}
 
     relay = SwitchInfo(object_id="relay", key=1, name="Relay")
     client = SimpleNamespace(
@@ -76,7 +76,7 @@ def test_capabilities_paired_by_key_get_their_name_on_connect() -> None:
 
     assert device._capabilities_options["onoff"]["name"] == "Relay"
     device.register_capability.assert_called_once()  # type: ignore[attr-defined]
-    assert device._unbound == []
+    assert device._unbound == set()
 
 
 def test_pairing_maps_every_entity() -> None:

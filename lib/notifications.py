@@ -5,11 +5,6 @@ from __future__ import annotations
 from typing import Any
 
 
-async def create_timeline_notification(homey: Any, excerpt: str) -> None:
-    """Post one Homey timeline notification. ``**double asterisks**`` render bold."""
-    await homey.notifications.create_notification(excerpt)
-
-
 async def notify_entities_changed(
     *,
     homey: Any,
@@ -38,4 +33,4 @@ async def notify_entities_changed(
     )
     if not excerpt:
         return
-    await create_timeline_notification(homey, excerpt)
+    await homey.notifications.create_notification(excerpt)

@@ -17,14 +17,9 @@ from aioesphomeapi import (
     TemperatureUnit,
 )
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
+from homey_esphomedriver.units import convert_temperature, temperature_unit_label
 
-from lib.mapping import (
-    DeviceEntityMapper,
-    celsius_step,
-    picker_values,
-    temperature_unit_label,
-    to_celsius,
-)
+from lib.mapping import DeviceEntityMapper, celsius_step, picker_values
 
 
 class ClimateEntityMapper:
@@ -52,48 +47,19 @@ class ClimateEntityMapper:
         )
 
         unit = info.temperature_unit or TemperatureUnit.CELSIUS
-        on_mode = next(
-            (
-                candidate
-                for candidate in (
-                    ClimateMode.HEAT_COOL,
-                    ClimateMode.AUTO,
-                    ClimateMode.HEAT,
-                    ClimateMode.COOL,
-                )
-                if candidate in modes
-            ),
-            next(mode for mode in modes if mode != ClimateMode.OFF),
-        )
-        auto_mode = next(
-            (
-                candidate
-                for candidate in (ClimateMode.HEAT_COOL, ClimateMode.AUTO)
-                if candidate in modes
-            ),
-            None,
-        )
-        thermostat_options: dict[str, object] = {"values": _thermostat_values(modes)}
-        if auto_mode is not None:
-            thermostat_options["climate_auto_mode"] = int(auto_mode)
+        unit_label = temperature_unit_label(unit)
 
         DeviceEntityMapper.add_capability(
             homey_device,
             info.key,
             "thermostat_mode",
-            thermostat_options,
+            {"values": _thermostat_values(modes)},
         )
-        DeviceEntityMapper.add_indexed(
-            homey_device,
-            info.key,
-            "onoff",
-            {"climate_on_mode": int(on_mode)},
-        )
+        DeviceEntityMapper.add_indexed(homey_device, info.key, "onoff")
 
         temp_options: dict[str, object] = {
-            "esphome_unit": temperature_unit_label(unit),
-            "min": to_celsius(unit, info.visual_min_temperature),
-            "max": to_celsius(unit, info.visual_max_temperature),
+            "min": convert_temperature(unit_label, info.visual_min_temperature),
+            "max": convert_temperature(unit_label, info.visual_max_temperature),
             "step": celsius_step(unit, info.visual_target_temperature_step),
         }
         if info.supports_two_point_target_temperature:
@@ -158,10 +124,7 @@ class ClimateEntityMapper:
 
         if info.supports_current_temperature:
             DeviceEntityMapper.add_capability(
-                homey_device,
-                info.key,
-                "measure_temperature",
-                {"esphome_unit": temperature_unit_label(unit)},
+                homey_device, info.key, "measure_temperature"
             )
 
         if info.supports_current_humidity:

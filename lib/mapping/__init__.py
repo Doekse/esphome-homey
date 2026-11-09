@@ -40,6 +40,7 @@ from aioesphomeapi import (
     WaterHeaterInfo,
 )
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
+from homey_esphomedriver.system import domain_of
 
 REFRESH_CAPABILITY = "button.refresh"
 
@@ -155,44 +156,11 @@ def picker_values(entries: Iterable[tuple[str, str]]) -> list[dict[str, object]]
     return [{"id": item_id, "title": {"en": title}} for item_id, title in entries]
 
 
-def temperature_unit_label(unit: TemperatureUnit | None) -> str:
-    """ESPHome wire unit stored on the capability for runtime conversion."""
-    if unit == TemperatureUnit.FAHRENHEIT:
-        return "°F"
-    if unit == TemperatureUnit.KELVIN:
-        return "K"
-    return "°C"
-
-
-def to_celsius(unit: TemperatureUnit | None, value: float) -> float:
-    """ESPHome temperature as Homey °C."""
-    if unit == TemperatureUnit.FAHRENHEIT:
-        return ((value - 32) * 5) / 9
-    if unit == TemperatureUnit.KELVIN:
-        return value - 273.15
-    return value
-
-
 def celsius_step(unit: TemperatureUnit | None, step: float) -> float:
     """ESPHome temperature step as Homey °C."""
     if unit == TemperatureUnit.FAHRENHEIT:
         return step * 5 / 9
     return step
-
-
-def _entity_domain(entity: EntityInfo | None) -> str | None:
-    """Snake-case domain from ``LightInfo`` → ``light``."""
-    if entity is None:
-        return None
-    name = type(entity).__name__
-    if name.endswith("Info"):
-        name = name[: -len("Info")]
-    chars: list[str] = []
-    for index, char in enumerate(name):
-        if char.isupper() and index:
-            chars.append("_")
-        chars.append(char.lower())
-    return "".join(chars) or None
 
 
 class _EntityMapper(Protocol):
@@ -363,8 +331,8 @@ class DeviceEntityMapper:
             options["device_id"] = _current_entity.device_id
         if capability_options:
             options.update(capability_options)
-        if "entity_type" not in options:
-            domain = _entity_domain(_current_entity)
+        if "entity_type" not in options and _current_entity is not None:
+            domain = domain_of(_current_entity)
             if domain is not None:
                 options["entity_type"] = domain
         if "." in capability and "title" not in options and _current_entity is not None:

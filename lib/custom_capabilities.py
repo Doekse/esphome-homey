@@ -9,8 +9,7 @@ capabilities. Their parsers live here and are passed to
 
 from __future__ import annotations
 
-import asyncio
-from collections.abc import Awaitable, Callable, Mapping
+from collections.abc import Mapping
 from typing import TYPE_CHECKING, Any
 
 from aioesphomeapi import AlarmControlPanelState, ClimatePreset, LockCommand
@@ -28,9 +27,12 @@ from lib.formatting import (
     format_timestamp,
     format_uptime,
 )
+from lib.tasks import spawn
 
 if TYPE_CHECKING:
     from homey.device import Device
+
+    from lib.flow import DriverFlowHandler
 
 _BUTTON_IDLE_DELAY_MS = 1000
 _DOORBELL_IDLE_DELAY_MS = 5000
@@ -130,13 +132,9 @@ def _report_timestamp(state: Any, entity: BoundEntity) -> str:
 
 
 def _report_text(state: Any, entity: BoundEntity) -> str:
+    """The state as text; a sensor without a unit is shown as text too."""
     del entity
     return str(state.state)
-
-
-def _report_boolean(state: Any, entity: BoundEntity) -> bool:
-    del entity
-    return bool(state.state)
 
 
 _PARSERS: dict[str, tuple[ReportParser | None, SetParser | None]] = {
@@ -149,7 +147,6 @@ _PARSERS: dict[str, tuple[ReportParser | None, SetParser | None]] = {
     "measure_date": (_report_date, None),
     "measure_timestamp": (_report_timestamp, None),
     "esphome_string": (_report_text, None),
-    "esphome_boolean": (_report_boolean, None),
 }
 """This app's parsers by capability base; ``None`` keeps the system parser."""
 
@@ -157,16 +154,14 @@ _PARSERS: dict[str, tuple[ReportParser | None, SetParser | None]] = {
 class CustomCapabilities:
     """This app's parsers for one device, and the timers its events need."""
 
-    def __init__(self, device: Device, trigger: Callable[..., Awaitable[None]]) -> None:
+    def __init__(self, device: Device, flow: DriverFlowHandler) -> None:
         """
         Args:
             device: The Homey device.
-            trigger: ``trigger(kind, device, capability_id, value)`` fires the
-                Flow card of a sub-capability change (``"subcapability"``) or
-                an event (``"event"``).
+            flow: Fires the Flow cards of sub-capability changes and events.
         """
         self._device = device
-        self._trigger = trigger
+        self._flow = flow
         self._idle_timeouts: dict[str, Any] = {}
 
     def parsers(self, capability_id: str, domain: str) -> dict[str, Any]:
@@ -212,8 +207,11 @@ class CustomCapabilities:
             value = report(state, entity)
             previous = self._device.get_capability_value(capability_id)
             if value is not None and value != previous:
-                self._spawn(
-                    self._trigger("subcapability", self._device, capability_id, value)
+                spawn(
+                    self._device,
+                    self._flow.trigger_subcapability(
+                        self._device, capability_id, value
+                    ),
                 )
             return value
 
@@ -230,7 +228,10 @@ class CustomCapabilities:
             token = None if doorbell else format_event_type(event_type)
             idle: Any = False if doorbell else _IDLE
             delay = _DOORBELL_IDLE_DELAY_MS if doorbell else _BUTTON_IDLE_DELAY_MS
-            self._spawn(self._trigger_then_idle(capability_id, token, idle, delay))
+            spawn(
+                self._device,
+                self._trigger_then_idle(capability_id, token, idle, delay),
+            )
             return value
 
         return parse
@@ -238,11 +239,11 @@ class CustomCapabilities:
     async def _trigger_then_idle(
         self, capability_id: str, token: Any, idle: Any, delay_ms: int
     ) -> None:
-        await self._trigger("event", self._device, capability_id, token)
+        await self._flow.trigger_event(self._device, capability_id, token)
 
         def on_idle() -> None:
             self._idle_timeouts.pop(capability_id, None)
-            self._spawn(self._device.set_capability_value(capability_id, idle))
+            spawn(self._device, self._device.set_capability_value(capability_id, idle))
 
         self._idle_timeouts[capability_id] = self._device.homey.set_timeout(
             on_idle, delay_ms
@@ -252,14 +253,3 @@ class CustomCapabilities:
         timeout_id = self._idle_timeouts.pop(capability_id, None)
         if timeout_id is not None:
             self._device.homey.clear_timeout(timeout_id)
-
-    def _spawn(self, awaitable: Awaitable[Any]) -> None:
-        task = asyncio.ensure_future(awaitable)
-        task.add_done_callback(self._on_done)
-
-    def _on_done(self, task: asyncio.Future[Any]) -> None:
-        if task.cancelled():
-            return
-        error = task.exception()
-        if error is not None:
-            self._device.error(error)

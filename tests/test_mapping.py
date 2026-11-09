@@ -28,8 +28,6 @@ from lib.mapping import (
     match_object_id_alias,
     picker_values,
     refresh_options,
-    temperature_unit_label,
-    to_celsius,
 )
 
 
@@ -126,36 +124,6 @@ def test_picker_values_shape() -> None:
         {"id": "heat", "title": {"en": "Heat"}},
         {"id": "cool", "title": {"en": "Cool"}},
     ]
-
-
-@pytest.mark.parametrize(
-    ("unit", "expected"),
-    [
-        (TemperatureUnit.FAHRENHEIT, "°F"),
-        (TemperatureUnit.KELVIN, "K"),
-        (TemperatureUnit.CELSIUS, "°C"),
-        (None, "°C"),
-    ],
-)
-def test_temperature_unit_label(unit: TemperatureUnit | None, expected: str) -> None:
-    assert temperature_unit_label(unit) == expected
-
-
-@pytest.mark.parametrize(
-    ("unit", "value", "expected"),
-    [
-        (TemperatureUnit.CELSIUS, 21.0, 21.0),
-        (None, 21.0, 21.0),
-        (TemperatureUnit.FAHRENHEIT, 32.0, 0.0),
-        (TemperatureUnit.KELVIN, 273.15, 0.0),
-    ],
-)
-def test_to_celsius(
-    unit: TemperatureUnit | None,
-    value: float,
-    expected: float,
-) -> None:
-    assert to_celsius(unit, value) == pytest.approx(expected)
 
 
 def test_celsius_step_scales_fahrenheit_only() -> None:

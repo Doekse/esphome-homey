@@ -38,14 +38,7 @@ class MediaPlayerEntityMapper:
                 | MediaPlayerEntityFeature.VOLUME_SET
                 | MediaPlayerEntityFeature.VOLUME_MUTE
             )
-            if info.supports_pause:
-                flags |= MediaPlayerEntityFeature.PAUSE | MediaPlayerEntityFeature.PLAY
-        DeviceEntityMapper.add_capability(
-            homey_device,
-            info.key,
-            "speaker_playing",
-            {"supports_pause": bool(flags & MediaPlayerEntityFeature.PAUSE)},
-        )
+        DeviceEntityMapper.add_capability(homey_device, info.key, "speaker_playing")
 
         for feature, capabilities in (
             (MediaPlayerEntityFeature.VOLUME_SET, ("volume_set",)),

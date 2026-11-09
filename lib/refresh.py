@@ -5,16 +5,13 @@ from __future__ import annotations
 from collections.abc import Collection
 from typing import Any
 
+from homey_esphomedriver.system import capability_base
+
 CapabilityPlan = tuple[
     list[str],
     list[tuple[str, dict[str, Any]]],
     list[tuple[str, dict[str, Any]]],
 ]
-
-
-def capability_base(capability_id: str) -> str:
-    """Homey type of a capability, ignoring any object-id suffix."""
-    return capability_id.split(".", 1)[0]
 
 
 def plan_capability_refresh(

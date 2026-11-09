@@ -8,8 +8,7 @@ rebuilds, the diagnostics / configuration toggles) and owns the Homey class.
 
 from __future__ import annotations
 
-import asyncio
-from typing import TYPE_CHECKING, Any, cast
+from typing import TYPE_CHECKING, cast
 
 from aioesphomeapi import EntityCategory
 from homey_esphomedriver import EspHomeClient, EspHomeDevice
@@ -18,12 +17,10 @@ from homey_esphomedriver.system import SETTABLE, capability_base, reports_only
 from lib.capabilities import DeviceCapabilityHandler
 from lib.custom_capabilities import EVENT_CAPABILITIES, CustomCapabilities
 from lib.notifications import notify_entities_changed
+from lib.tasks import spawn
 
 if TYPE_CHECKING:
     from lib.driver import GenericEspHomeDriver
-
-# The event loop keeps only a weak reference to scheduled tasks.
-_notification_tasks: set[asyncio.Task[None]] = set()
 
 
 class GenericEspHomeDevice(EspHomeDevice):
@@ -31,14 +28,16 @@ class GenericEspHomeDevice(EspHomeDevice):
 
     _capability_handler: DeviceCapabilityHandler
     _custom: CustomCapabilities
-    _unbound: list[str]
+    _unbound: set[str]
 
     async def on_esphome_init(self, client: EspHomeClient | None) -> None:
         """Bind every capability that pairing mapped to an entity."""
         del client
-        self._custom = CustomCapabilities(self, self._trigger_flow)
+        # Homey initializes the driver, and with it the Flow cards, first.
+        flow = cast("GenericEspHomeDriver", self.driver).flow
+        self._custom = CustomCapabilities(self, flow)
         self._capability_handler = DeviceCapabilityHandler(self)
-        self._unbound = []
+        self._unbound = set()
 
         device_class = self.get_setting("device_class")
         if device_class not in (None, "auto"):
@@ -107,8 +106,7 @@ class GenericEspHomeDevice(EspHomeDevice):
         name = options.get("name")
         if name is None:
             # Paired before 0.6, which bound by key: look the name up once.
-            if capability_id not in self._unbound:
-                self._unbound.append(capability_id)
+            self._unbound.add(capability_id)
             return
         try:
             self.register_capability(
@@ -140,7 +138,7 @@ class GenericEspHomeDevice(EspHomeDevice):
         """Record the entity name of capabilities stored with only a key."""
         entities, _services = await client.list_entities_services()
         by_key = {entity.key: entity for entity in entities}
-        unbound, self._unbound = self._unbound, []
+        unbound, self._unbound = self._unbound, set()
         for capability_id in unbound:
             options = dict(self._capabilities_options.get(capability_id) or {})
             entity = by_key.get(int(options["key"]))
@@ -157,22 +155,16 @@ class GenericEspHomeDevice(EspHomeDevice):
             f"Synced capabilities for firmware {build}: "
             f"added {result.added}, removed {result.removed}"
         )
-
-        async def post() -> None:
-            try:
-                await notify_entities_changed(
-                    homey=self.homey,
-                    device_name=self.get_name(),
-                    added=result.added,
-                    removed=result.removed_titles,
-                    enabled=self.get_setting("notify_entities_changed") is not False,
-                )
-            except Exception as error:
-                self.error("Failed to create entities changed notification:", error)
-
-        task = asyncio.create_task(post())
-        _notification_tasks.add(task)
-        task.add_done_callback(_notification_tasks.discard)
+        spawn(
+            self,
+            notify_entities_changed(
+                homey=self.homey,
+                device_name=self.get_name(),
+                added=result.added,
+                removed=result.removed_titles,
+                enabled=self.get_setting("notify_entities_changed") is not False,
+            ),
+        )
 
     async def _ensure_entities_build(self, build: str) -> str:
         """Return the stored build, seeding a missing key from the old setting.
@@ -195,7 +187,7 @@ class GenericEspHomeDevice(EspHomeDevice):
     async def _seed_event_capabilities(self) -> None:
         """Homey shows event capabilities as null until a value is written."""
         for capability_id in self.get_capabilities():
-            base = capability_id.split(".", 1)[0]
+            base = capability_base(capability_id)
             if (
                 base in EVENT_CAPABILITIES
                 and "." in capability_id
@@ -204,12 +196,3 @@ class GenericEspHomeDevice(EspHomeDevice):
                 await self.set_capability_value(
                     capability_id, False if base == "alarm_doorbell" else "idle"
                 )
-
-    async def _trigger_flow(
-        self, kind: str, device: Any, capability_id: str, value: Any
-    ) -> None:
-        flow = cast("GenericEspHomeDriver", self.driver).flow
-        if kind == "event":
-            await flow.trigger_event(device, capability_id, value)
-        else:
-            await flow.trigger_subcapability(device, capability_id, value)

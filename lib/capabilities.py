@@ -15,6 +15,7 @@ from typing import TYPE_CHECKING, Any
 
 from aioesphomeapi import EntityCategory, EntityInfo
 
+from lib.formatting import option_title
 from lib.mapping import REFRESH_CAPABILITY, DeviceEntityMapper, refresh_options
 from lib.refresh import plan_appeared_and_gone, plan_capability_refresh
 
@@ -77,8 +78,12 @@ class DeviceCapabilityHandler:
                 current, {entity.key for entity in entities}, plan
             )
             # Removal deletes the options, and the title with them.
+            # WORKAROUND: Homey may persist options as null (Athom will return {}).
             removed_titles = [
-                _removed_title(current.get(capability_id), capability_id)
+                option_title(
+                    (current.get(capability_id) or {}).get("title"),
+                    capability_id,
+                )
                 for capability_id in to_remove
             ]
             await self._apply_capability_refresh(entities, to_remove, to_add, to_update)
@@ -235,15 +240,3 @@ class DeviceCapabilityHandler:
         device = self._device
         if device.get_store().get("entities_build") != build:
             await device.set_store_value("entities_build", build)
-
-
-def _removed_title(stored: Any, capability_id: str) -> str:
-    """Return the stored title, or the capability id when it has none."""
-    title = stored.get("title") if isinstance(stored, dict) else None
-    if isinstance(title, str) and title:
-        return title
-    if isinstance(title, dict):
-        english = title.get("en")
-        if isinstance(english, str) and english:
-            return english
-    return capability_id

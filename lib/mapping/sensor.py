@@ -232,7 +232,7 @@ class SensorEntityMapper:
         if claim_class:
             DeviceEntityMapper.set_device_class(homey_device, "sensor")
 
-        capability_options: dict[str, object] = {"esphome_unit": unit}
+        capability_options: dict[str, object] = {}
         if unit and capability_id is not None:
             unit_lower = unit.lower().strip()
             if capability_id == "measure_noise" and unit != "dB":

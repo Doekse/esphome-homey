@@ -14,14 +14,9 @@ from aioesphomeapi import (
     WaterHeaterMode,
 )
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
+from homey_esphomedriver.units import convert_temperature, temperature_unit_label
 
-from lib.mapping import (
-    DeviceEntityMapper,
-    celsius_step,
-    picker_values,
-    temperature_unit_label,
-    to_celsius,
-)
+from lib.mapping import DeviceEntityMapper, celsius_step, picker_values
 
 
 class WaterHeaterEntityMapper:
@@ -38,6 +33,7 @@ class WaterHeaterEntityMapper:
 
         flags = info.supported_features
         unit = info.temperature_unit
+        unit_label = temperature_unit_label(unit)
 
         if flags & WaterHeaterFeature.SUPPORTS_ON_OFF:
             DeviceEntityMapper.add_indexed(homey_device, info.key, "onoff")
@@ -65,9 +61,8 @@ class WaterHeaterEntityMapper:
             )
 
         temp_options: dict[str, object] = {
-            "esphome_unit": temperature_unit_label(unit),
-            "min": to_celsius(unit, info.min_temperature),
-            "max": to_celsius(unit, info.max_temperature),
+            "min": convert_temperature(unit_label, info.min_temperature),
+            "max": convert_temperature(unit_label, info.max_temperature),
             "step": celsius_step(unit, info.target_temperature_step),
         }
         if flags & WaterHeaterFeature.SUPPORTS_TWO_POINT_TARGET_TEMPERATURE:
@@ -88,8 +83,5 @@ class WaterHeaterEntityMapper:
 
         if flags & WaterHeaterFeature.SUPPORTS_CURRENT_TEMPERATURE:
             DeviceEntityMapper.add_capability(
-                homey_device,
-                info.key,
-                "measure_temperature",
-                {"esphome_unit": temperature_unit_label(unit)},
+                homey_device, info.key, "measure_temperature"
             )

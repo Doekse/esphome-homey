@@ -9,7 +9,6 @@ from typing import cast
 
 from aioesphomeapi import ColorMode, EntityInfo, LightColorCapability, LightInfo
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
-from homey_esphomedriver.units import mireds_to_kelvin
 
 from lib.mapping import (
     DeviceEntityMapper,
@@ -50,21 +49,7 @@ class LightEntityMapper:
 
         if light_supports_color_temp:
             DeviceEntityMapper.add_capability(
-                homey_device,
-                info.key,
-                "light_temperature",
-                {
-                    "min_color_temp_kelvin": (
-                        int(round(mireds_to_kelvin(info.max_mireds)))
-                        if info.max_mireds
-                        else 2000
-                    ),
-                    "max_color_temp_kelvin": (
-                        int(round(mireds_to_kelvin(info.min_mireds)))
-                        if info.min_mireds
-                        else 6500
-                    ),
-                },
+                homey_device, info.key, "light_temperature"
             )
 
         if light_supports_color_changing:

@@ -5,6 +5,8 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import TYPE_CHECKING, Any
 
+from lib.formatting import option_title
+
 if TYPE_CHECKING:
     from homey_esphomedriver.esphome_driver import EspHomeDriver  # noqa: F401
 
@@ -32,16 +34,8 @@ _EVENT_TOKENS = {
 }
 
 
-def _option_title(title: Any, fallback: str) -> str:
-    if isinstance(title, str) and title:
-        return title
-    if isinstance(title, dict):
-        return str(title.get("en") or fallback)
-    return fallback
-
-
 def _capability_title(device: Any, capability_id: str) -> str:
-    return _option_title(
+    return option_title(
         device.get_capability_options(capability_id).get("title"),
         capability_id,
     )
@@ -315,7 +309,7 @@ class DriverFlowHandler:
         results: list[dict[str, str]] = []
         for value in values:
             option_id = str(value["id"])
-            name = _option_title(value.get("title"), option_id)
+            name = option_title(value.get("title"), option_id)
             if query_lower in name.lower() or query_lower in option_id.lower():
                 results.append({"id": option_id, "name": name})
         return results
@@ -339,7 +333,7 @@ class DriverFlowHandler:
                 continue
             if setable_only and not options.get("setable", False):
                 continue
-            name = _option_title(options.get("title"), capability_id)
+            name = option_title(options.get("title"), capability_id)
             if query_lower in name.lower() or query_lower in capability_id.lower():
                 results.append({"id": capability_id, "name": name})
         return results

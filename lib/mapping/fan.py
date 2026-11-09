@@ -32,12 +32,7 @@ class FanEntityMapper:
                 homey_device,
                 info.key,
                 "fan_speed",
-                {
-                    "min": 0,
-                    "max": 1,
-                    "step": 1 / speed_count,
-                    "speed_count": speed_count,
-                },
+                {"min": 0, "max": 1, "step": 1 / speed_count},
             )
 
         if info.supports_oscillation:

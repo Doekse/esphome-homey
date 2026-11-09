@@ -1,8 +1,9 @@
-"""Text formats of uptime, dates, timestamps and event types for Homey."""
+"""Text formats of uptime, dates, timestamps, event types and titles for Homey."""
 
 from __future__ import annotations
 
 from datetime import datetime
+from typing import Any
 
 
 def format_uptime(seconds: float) -> str:
@@ -38,6 +39,13 @@ def format_timestamp(value: str) -> str:
 def format_event_type(event_type: str) -> str:
     """Humanize an ESPHome event_type for Homey titles and Flow tokens."""
     return " ".join(part.capitalize() for part in event_type.split("_"))
+
+
+def option_title(title: Any, fallback: str) -> str:
+    """A capability or picker option title as text, the English one if translated."""
+    if isinstance(title, dict):
+        title = title.get("en")
+    return title if isinstance(title, str) and title else fallback
 
 
 def _parse_iso8601(value: str) -> datetime:

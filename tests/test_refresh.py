@@ -24,17 +24,7 @@ from aioesphomeapi import (
 
 from lib.capabilities import DeviceCapabilityHandler
 from lib.mapping import DeviceEntityMapper
-from lib.refresh import (
-    capability_base,
-    plan_appeared_and_gone,
-    plan_capability_refresh,
-)
-
-
-def test_capability_base() -> None:
-    assert capability_base("onoff") == "onoff"
-    assert capability_base("measure_temperature.1") == "measure_temperature"
-    assert capability_base("esphome_number.pump") == "esphome_number"
+from lib.refresh import plan_appeared_and_gone, plan_capability_refresh
 
 
 def test_scope_keeps_entity_when_capability_base_changes() -> None:
