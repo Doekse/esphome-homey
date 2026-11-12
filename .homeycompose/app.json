@@ -1,6 +1,6 @@
 {
   "id": "io.esphome",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "compatibility": ">=13.0.0",
   "brandColor": "#00ccff",
   "sdk": 3,
