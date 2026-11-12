@@ -41,7 +41,6 @@
     "handshake": "Den krypterade anslutningen kunde inte upprättas. Kontrollera krypteringsnyckeln och att enhetens firmware är uppdaterad.",
     "device_mismatch": "Enheten på den här adressen är inte den Homey parade. Kontrollera IP-adressen eller DHCP-reservationen.",
     "mac_missing": "ESPHome-enheten har inte skickat någon MAC-adress.",
-    "no_supported_entities": "Den här ESPHome-enheten har inga delar som Homey stöder.",
     "device_not_connected": "ESPHome-enheten är inte ansluten",
     "device_not_prepared": "Enheten är inte redo. Gå tillbaka och anslut igen.",
     "no_device_selected": "Ingen enhet vald",
@@ -69,7 +68,8 @@
       "invalid_value": "Improv-enheten skickade ett ogiltigt värde"
     },
     "project_not_supported": "Det här ESPHome-projektet stöds inte av den här Homey-appen.",
-    "setting_invalid": "Det här värdet är inte giltigt för enheten."
+    "setting_invalid": "Det här värdet är inte giltigt för enheten.",
+    "entity_missing": "Den här enheten har ingen __domain__ med namnet __name__."
   },
   "nativeAppSuggestion": "Goda nyheter! Denna enhet har en egen app! Sök i Homey App Store efter __appName__.",
   "repair": {

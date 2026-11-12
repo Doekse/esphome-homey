@@ -41,7 +41,6 @@
     "handshake": "Den krypterede forbindelse kunne ikke oprettes. Tjek krypteringsnøglen, og at enhedens firmware er opdateret.",
     "device_mismatch": "Enheden på denne adresse er ikke den, Homey parrede. Tjek IP-adressen eller DHCP-reservationen.",
     "mac_missing": "ESPHome-enheden har ikke sendt en MAC-adresse.",
-    "no_supported_entities": "Denne ESPHome-enhed har ingen dele, som Homey understøtter.",
     "device_not_connected": "ESPHome-enheden er ikke forbundet",
     "device_not_prepared": "Enheden er ikke klar. Gå tilbage, og opret forbindelsen igen.",
     "no_device_selected": "Ingen enhed valgt",
@@ -69,7 +68,8 @@
       "invalid_value": "Improv-enheden sendte en ugyldig værdi"
     },
     "project_not_supported": "Dette ESPHome-projekt understøttes ikke af denne Homey-app.",
-    "setting_invalid": "Denne værdi er ikke gyldig for enheden."
+    "setting_invalid": "Denne værdi er ikke gyldig for enheden.",
+    "entity_missing": "Denne enhed har ingen __domain__ med navnet __name__."
   },
   "nativeAppSuggestion": "Gode nyheder! Denne enhed har sin egen app! Søg i Homey App Store efter __appName__.",
   "repair": {

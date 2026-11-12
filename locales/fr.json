@@ -41,7 +41,6 @@
     "handshake": "Impossible d’établir la connexion chiffrée. Vérifie la clé de chiffrement et que le firmware de l’appareil est à jour.",
     "device_mismatch": "L’appareil à cette adresse n’est pas celui associé à Homey. Vérifie l’adresse IP ou la réservation DHCP.",
     "mac_missing": "L’appareil ESPHome n’a pas transmis d’adresse MAC.",
-    "no_supported_entities": "Cet appareil ESPHome n’a aucun élément pris en charge par Homey.",
     "device_not_connected": "L’appareil ESPHome n’est pas connecté",
     "device_not_prepared": "L’appareil n’est pas prêt. Reviens en arrière et reconnecte-toi.",
     "no_device_selected": "Aucun appareil sélectionné",
@@ -69,7 +68,8 @@
       "invalid_value": "L’appareil Improv a envoyé une valeur invalide"
     },
     "project_not_supported": "Ce projet ESPHome n’est pas pris en charge par cette application Homey.",
-    "setting_invalid": "Cette valeur n'est pas valide pour l'appareil."
+    "setting_invalid": "Cette valeur n'est pas valide pour l'appareil.",
+    "entity_missing": "Cet appareil n'a aucune entité __domain__ nommée __name__."
   },
   "nativeAppSuggestion": "Bonne nouvelle ! Cet appareil a sa propre app ! Cherchez __appName__ dans le Homey App Store.",
   "repair": {

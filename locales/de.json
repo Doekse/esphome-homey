@@ -41,7 +41,6 @@
     "handshake": "Die verschlüsselte Verbindung konnte nicht hergestellt werden. Prüfe den Verschlüsselungsschlüssel und ob die Firmware des Geräts aktuell ist.",
     "device_mismatch": "Das Gerät unter dieser Adresse ist nicht das, das Homey gekoppelt hat. Prüfe die IP-Adresse oder die DHCP-Reservierung.",
     "mac_missing": "Das ESPHome-Gerät hat keine MAC-Adresse übermittelt.",
-    "no_supported_entities": "Dieses ESPHome-Gerät hat keine Komponenten, die Homey unterstützt.",
     "device_not_connected": "ESPHome-Gerät ist nicht verbunden",
     "device_not_prepared": "Das Gerät ist nicht vorbereitet. Geh zurück und stelle die Verbindung erneut her.",
     "no_device_selected": "Kein Gerät ausgewählt",
@@ -69,7 +68,8 @@
       "invalid_value": "Improv-Gerät hat einen ungültigen Wert gesendet"
     },
     "project_not_supported": "Dieses ESPHome-Projekt wird von dieser Homey-App nicht unterstützt.",
-    "setting_invalid": "Dieser Wert ist für das Gerät nicht gültig."
+    "setting_invalid": "Dieser Wert ist für das Gerät nicht gültig.",
+    "entity_missing": "Dieses Gerät hat keine __domain__-Entität namens __name__."
   },
   "nativeAppSuggestion": "Gute Nachrichten! Dieses Gerät hat eine eigene App! Suche im Homey App Store nach __appName__.",
   "repair": {

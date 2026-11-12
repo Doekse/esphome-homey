@@ -41,7 +41,6 @@
     "handshake": "Could not complete the encrypted handshake. Check the encryption key and that the device firmware is up to date.",
     "device_mismatch": "The device at this address is not the one Homey paired. Check the IP address or DHCP reservation.",
     "mac_missing": "The ESPHome device did not report a MAC address.",
-    "no_supported_entities": "This ESPHome node has no supported entities for Homey.",
     "device_not_connected": "ESPHome device is not connected",
     "device_not_prepared": "Device was not prepared. Go back and reconnect.",
     "no_device_selected": "No device selected",

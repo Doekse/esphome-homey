@@ -41,7 +41,6 @@
     "handshake": "Nie udało się nawiązać szyfrowanego połączenia. Sprawdź klucz szyfrowania oraz czy oprogramowanie urządzenia jest aktualne.",
     "device_mismatch": "Urządzenie pod tym adresem nie jest tym, które Homey sparował. Sprawdź adres IP lub rezerwację DHCP.",
     "mac_missing": "Urządzenie ESPHome nie przesłało adresu MAC.",
-    "no_supported_entities": "To urządzenie ESPHome nie ma elementów obsługiwanych przez Homey.",
     "device_not_connected": "Urządzenie ESPHome nie jest połączone",
     "device_not_prepared": "Urządzenie nie jest gotowe. Wróć i połącz ponownie.",
     "no_device_selected": "Nie wybrano urządzenia",
@@ -69,7 +68,8 @@
       "invalid_value": "Urządzenie Improv wysłało nieprawidłową wartość"
     },
     "project_not_supported": "Ten projekt ESPHome nie jest obsługiwany przez tę aplikację Homey.",
-    "setting_invalid": "Ta wartość jest nieprawidłowa dla urządzenia."
+    "setting_invalid": "Ta wartość jest nieprawidłowa dla urządzenia.",
+    "entity_missing": "To urządzenie nie ma encji __domain__ o nazwie __name__."
   },
   "nativeAppSuggestion": "Dobre wieści! To urządzenie ma własną aplikację! Wyszukaj __appName__ w Homey App Store.",
   "repair": {
