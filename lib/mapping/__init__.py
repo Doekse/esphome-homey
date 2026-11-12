@@ -380,58 +380,58 @@ def _get_mappers() -> dict[type[EntityInfo], _EntityMapper]:
     if _MAPPERS is not None:
         return _MAPPERS
 
-    from lib.mapping.alarm_control_panel import (
+    from app.lib.mapping.alarm_control_panel import (
         AlarmControlPanelEntityMapper,
     )
-    from lib.mapping.binary_sensor import (
+    from app.lib.mapping.binary_sensor import (
         BinarySensorEntityMapper,
     )
-    from lib.mapping.button import (
+    from app.lib.mapping.button import (
         ButtonEntityMapper,
     )
-    from lib.mapping.climate import (
+    from app.lib.mapping.climate import (
         ClimateEntityMapper,
     )
-    from lib.mapping.cover import (
+    from app.lib.mapping.cover import (
         CoverEntityMapper,
     )
-    from lib.mapping.event import (
+    from app.lib.mapping.event import (
         EventEntityMapper,
     )
-    from lib.mapping.fan import (
+    from app.lib.mapping.fan import (
         FanEntityMapper,
     )
-    from lib.mapping.light import (
+    from app.lib.mapping.light import (
         LightEntityMapper,
     )
-    from lib.mapping.lock import (
+    from app.lib.mapping.lock import (
         LockEntityMapper,
     )
-    from lib.mapping.media_player import (
+    from app.lib.mapping.media_player import (
         MediaPlayerEntityMapper,
     )
-    from lib.mapping.number import (
+    from app.lib.mapping.number import (
         NumberEntityMapper,
     )
-    from lib.mapping.select import (
+    from app.lib.mapping.select import (
         SelectEntityMapper,
     )
-    from lib.mapping.sensor import (
+    from app.lib.mapping.sensor import (
         SensorEntityMapper,
     )
-    from lib.mapping.siren import (
+    from app.lib.mapping.siren import (
         SirenEntityMapper,
     )
-    from lib.mapping.switch import (
+    from app.lib.mapping.switch import (
         SwitchEntityMapper,
     )
-    from lib.mapping.text_sensor import (
+    from app.lib.mapping.text_sensor import (
         TextSensorEntityMapper,
     )
-    from lib.mapping.valve import (
+    from app.lib.mapping.valve import (
         ValveEntityMapper,
     )
-    from lib.mapping.water_heater import (
+    from app.lib.mapping.water_heater import (
         WaterHeaterEntityMapper,
     )
 

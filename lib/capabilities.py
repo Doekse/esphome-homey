@@ -15,12 +15,12 @@ from typing import TYPE_CHECKING, Any
 
 from aioesphomeapi import EntityCategory, EntityInfo
 
-from lib.formatting import option_title
-from lib.mapping import REFRESH_CAPABILITY, DeviceEntityMapper, refresh_options
-from lib.refresh import plan_appeared_and_gone, plan_capability_refresh
+from app.lib.formatting import option_title
+from app.lib.mapping import REFRESH_CAPABILITY, DeviceEntityMapper, refresh_options
+from app.lib.refresh import plan_appeared_and_gone, plan_capability_refresh
 
 if TYPE_CHECKING:
-    from lib.device import GenericEspHomeDevice
+    from app.lib.device import GenericEspHomeDevice
 
 
 @dataclass(frozen=True, slots=True)

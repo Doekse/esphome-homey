@@ -14,13 +14,13 @@ from aioesphomeapi import EntityCategory
 from homey_esphomedriver import EspHomeClient, EspHomeDevice
 from homey_esphomedriver.system import SETTABLE, capability_base, reports_only
 
-from lib.capabilities import DeviceCapabilityHandler
-from lib.custom_capabilities import EVENT_CAPABILITIES, CustomCapabilities
-from lib.notifications import notify_entities_changed
-from lib.tasks import spawn
+from app.lib.capabilities import DeviceCapabilityHandler
+from app.lib.custom_capabilities import EVENT_CAPABILITIES, CustomCapabilities
+from app.lib.notifications import notify_entities_changed
+from app.lib.tasks import spawn
 
 if TYPE_CHECKING:
-    from lib.driver import GenericEspHomeDriver
+    from app.lib.driver import GenericEspHomeDriver
 
 
 _REPLACED = frozenset({"fan_oscillate"})

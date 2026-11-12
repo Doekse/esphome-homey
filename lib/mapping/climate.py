@@ -19,7 +19,7 @@ from aioesphomeapi import (
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 from homey_esphomedriver.units import convert_temperature, temperature_unit_label
 
-from lib.mapping import DeviceEntityMapper, celsius_step, picker_values
+from app.lib.mapping import DeviceEntityMapper, celsius_step, picker_values
 
 
 class ClimateEntityMapper:

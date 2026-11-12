@@ -14,7 +14,7 @@ from aioesphomeapi import (
 )
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 
-from lib.mapping import (
+from app.lib.mapping import (
     DeviceEntityMapper,
 )
 

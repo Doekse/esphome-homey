@@ -32,7 +32,7 @@ from aioesphomeapi import (
 )
 from homey_esphomedriver.system import BoundEntity, domain_of
 
-from lib.custom_capabilities import CustomCapabilities
+from app.lib.custom_capabilities import CustomCapabilities
 
 
 class _Device:

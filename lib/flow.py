@@ -5,7 +5,7 @@ from __future__ import annotations
 from collections.abc import Callable
 from typing import TYPE_CHECKING, Any
 
-from lib.formatting import option_title
+from app.lib.formatting import option_title
 
 if TYPE_CHECKING:
     from homey_esphomedriver.esphome_driver import EspHomeDriver  # noqa: F401

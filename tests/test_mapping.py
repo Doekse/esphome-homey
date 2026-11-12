@@ -23,7 +23,7 @@ from aioesphomeapi import (
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 from homey_esphomedriver.system import SETTABLE, capability_base
 
-from lib.mapping import (
+from app.lib.mapping import (
     REFRESH_CAPABILITY,
     DeviceEntityMapper,
     ObjectIdAlias,

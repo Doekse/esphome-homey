@@ -11,7 +11,7 @@ from typing import cast
 from aioesphomeapi import EntityInfo, SirenInfo
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 
-from lib.mapping import (
+from app.lib.mapping import (
     DeviceEntityMapper,
 )
 

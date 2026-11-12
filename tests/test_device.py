@@ -9,9 +9,9 @@ from unittest.mock import AsyncMock, MagicMock
 
 from aioesphomeapi import ButtonInfo, DeviceInfo, LightInfo, SwitchInfo
 
-from lib.custom_capabilities import CustomCapabilities
-from lib.device import GenericEspHomeDevice
-from lib.driver import GenericEspHomeDriver
+from app.lib.custom_capabilities import CustomCapabilities
+from app.lib.device import GenericEspHomeDevice
+from app.lib.driver import GenericEspHomeDriver
 
 
 def _device(options: dict[str, Any]) -> GenericEspHomeDevice:

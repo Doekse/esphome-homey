@@ -8,8 +8,8 @@ from aioesphomeapi import DeviceInfo, EntityInfo
 from homey_esphomedriver import EspHomeDriver
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 
-from lib.flow import DriverFlowHandler
-from lib.mapping import DeviceEntityMapper, refresh_options
+from app.lib.flow import DriverFlowHandler
+from app.lib.mapping import DeviceEntityMapper, refresh_options
 
 
 class GenericEspHomeDriver(EspHomeDriver):

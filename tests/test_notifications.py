@@ -9,7 +9,7 @@ from types import SimpleNamespace
 from typing import Any
 from unittest.mock import AsyncMock
 
-from lib.notifications import notify_entities_changed
+from app.lib.notifications import notify_entities_changed
 
 _LOCALES = (
     "en",

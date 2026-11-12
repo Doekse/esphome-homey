@@ -21,18 +21,18 @@ from homey_esphomedriver.system import (
     lookup,
 )
 
-from lib.formatting import (
+from app.lib.formatting import (
     format_date,
     format_event_type,
     format_timestamp,
     format_uptime,
 )
-from lib.tasks import spawn
+from app.lib.tasks import spawn
 
 if TYPE_CHECKING:
     from homey.device import Device
 
-    from lib.flow import DriverFlowHandler
+    from app.lib.flow import DriverFlowHandler
 
 _BUTTON_IDLE_DELAY_MS = 1000
 _DOORBELL_IDLE_DELAY_MS = 5000

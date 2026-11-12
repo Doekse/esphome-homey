@@ -8,7 +8,7 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-from lib.flow import DriverFlowHandler
+from app.lib.flow import DriverFlowHandler
 
 
 class _Device:

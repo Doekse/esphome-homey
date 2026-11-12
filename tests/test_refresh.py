@@ -22,9 +22,9 @@ from aioesphomeapi import (
     SwitchInfo,
 )
 
-from lib.capabilities import DeviceCapabilityHandler
-from lib.mapping import DeviceEntityMapper
-from lib.refresh import plan_appeared_and_gone, plan_capability_refresh
+from app.lib.capabilities import DeviceCapabilityHandler
+from app.lib.mapping import DeviceEntityMapper
+from app.lib.refresh import plan_appeared_and_gone, plan_capability_refresh
 
 
 def test_scope_keeps_entity_when_capability_base_changes() -> None:

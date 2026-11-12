@@ -10,7 +10,7 @@ from typing import cast
 from aioesphomeapi import ColorMode, EntityInfo, LightColorCapability, LightInfo
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 
-from lib.mapping import (
+from app.lib.mapping import (
     DeviceEntityMapper,
     picker_values,
 )

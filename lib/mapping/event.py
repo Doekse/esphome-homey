@@ -7,8 +7,8 @@ from typing import cast
 from aioesphomeapi import EntityInfo, EventInfo
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 
-from lib.formatting import format_event_type
-from lib.mapping import (
+from app.lib.formatting import format_event_type
+from app.lib.mapping import (
     DeviceEntityMapper,
     picker_values,
 )

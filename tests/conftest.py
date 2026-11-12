@@ -1,8 +1,8 @@
 """Test bootstrap.
 
 The app's code imports the Homey SDK, which only exists on a Homey. Provide
-the few classes the imports need, and put the app root on the path so
-``lib`` imports the way the Homey runtime imports it.
+the few classes the imports need, and register the app root as the
+``app`` package, the way the Homey runtime loads it.
 """
 
 from __future__ import annotations
@@ -60,4 +60,13 @@ def _install_homey_stub() -> None:
 
 _install_homey_stub()
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+def _install_app_package() -> None:
+    # Homey imports the app root as the ``app`` package; mirror that here.
+    root = Path(__file__).resolve().parents[1]
+    app = types.ModuleType("app")
+    app.__path__ = [str(root)]
+    sys.modules.setdefault("app", app)
+
+
+_install_app_package()

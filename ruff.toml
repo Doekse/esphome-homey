@@ -5,4 +5,4 @@ extend-exclude = ["python_packages", ".homeybuild"]
 select = ["E", "F", "I", "UP", "B"]
 
 [lint.isort]
-known-first-party = ["lib"]
+known-first-party = ["app"]

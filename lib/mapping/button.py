@@ -7,7 +7,7 @@ from typing import cast
 from aioesphomeapi import ButtonInfo, EntityInfo
 from homey_esphomedriver.esphome_types import HomeyEspHomeDeviceOption
 
-from lib.mapping import (
+from app.lib.mapping import (
     DeviceEntityMapper,
 )
 
