@@ -1,0 +1,78 @@
+{
+  "type": "group",
+  "label": {
+    "en": "Capabilities"
+  },
+  "children": [
+    {
+      "id": "show_diagnostics",
+      "type": "checkbox",
+      "label": {
+        "en": "Show diagnostic capabilities",
+        "ar": "إظهار capabilities التشخيص",
+        "da": "Vis diagnostiske capabilities",
+        "de": "Diagnostische Capabilities anzeigen",
+        "es": "Mostrar capabilities de diagnóstico",
+        "fr": "Afficher les capabilities de diagnostic",
+        "it": "Mostra capabilities diagnostiche",
+        "ko": "진단 capabilities 표시",
+        "nl": "Diagnostische capabilities tonen",
+        "no": "Vis diagnostiske capabilities",
+        "pl": "Pokaż capabilities diagnostyczne",
+        "ru": "Показать диагностические capabilities",
+        "sv": "Visa diagnostiska capabilities"
+      },
+      "value": false,
+      "hint": {
+        "en": "Adds diagnostic entities such as signal strength and uptime. Turning off removes them again.",
+        "ar": "يضيف capabilities تشخيصية مثل قوة الإشارة وuptime. إيقافها يزيلها مجددًا.",
+        "da": "Tilføjer diagnostiske capabilities såsom signalstyrke og uptime. Hvis du slår dem fra, fjernes de igen.",
+        "de": "Fügt diagnostische Capabilities wie Signalstärke und Uptime hinzu. Deaktivieren entfernt sie wieder.",
+        "es": "Añade capabilities de diagnóstico como la intensidad de señal y el uptime. Al desactivarlas se eliminan de nuevo.",
+        "fr": "Ajoute des capabilities de diagnostic comme la force du signal et l’uptime. Les désactiver les retire à nouveau.",
+        "it": "Aggiunge capabilities diagnostiche come intensità del segnale e uptime. Disattivandole vengono rimosse.",
+        "ko": "신호 세기와 uptime 같은 진단 capabilities를 추가합니다. 끄면 다시 제거됩니다.",
+        "nl": "Voegt diagnostische capabilities toe, zoals signaalsterkte en uptime. Uitschakelen verwijdert ze weer.",
+        "no": "Legger til diagnostiske capabilities som signalstyrke og uptime. Hvis du slår dem av, fjernes de igjen.",
+        "pl": "Dodaje capabilities diagnostyczne, takie jak siła sygnału i uptime. Wyłączenie usuwa je ponownie.",
+        "ru": "Добавляет диагностические capabilities, например уровень сигнала и uptime. Отключение снова удаляет их.",
+        "sv": "Lägger till diagnostiska capabilities som signalstyrka och uptime. Om du stänger av dem tas de bort igen."
+      }
+    },
+    {
+      "id": "show_configuration",
+      "type": "checkbox",
+      "label": {
+        "en": "Show configuration capabilities",
+        "ar": "إظهار capabilities الإعداد",
+        "da": "Vis konfigurations-capabilities",
+        "de": "Konfigurations-Capabilities anzeigen",
+        "es": "Mostrar capabilities de configuración",
+        "fr": "Afficher les capabilities de configuration",
+        "it": "Mostra capabilities di configurazione",
+        "ko": "구성 capabilities 표시",
+        "nl": "Configuratie-capabilities tonen",
+        "no": "Vis konfigurasjons-capabilities",
+        "pl": "Pokaż capabilities konfiguracyjne",
+        "ru": "Показать конфигурационные capabilities",
+        "sv": "Visa konfigurations-capabilities"
+      },
+      "value": false,
+      "hint": {
+        "en": "Adds configuration entities such as calibration numbers and restart buttons. Turning off removes them again.",
+        "ar": "يضيف capabilities إعداد مثل أرقام المعايرة وأزرار إعادة التشغيل. إيقافها يزيلها مجددًا.",
+        "da": "Tilføjer konfigurations-capabilities såsom kalibreringsnumre og genstartsknapper. Hvis du slår dem fra, fjernes de igen.",
+        "de": "Fügt Konfigurations-Capabilities wie Kalibrierungsnummern und Neustart-Schaltflächen hinzu. Deaktivieren entfernt sie wieder.",
+        "es": "Añade capabilities de configuración como números de calibración y botones de reinicio. Al desactivarlas se eliminan de nuevo.",
+        "fr": "Ajoute des capabilities de configuration comme des numéros de calibration et des boutons de redémarrage. Les désactiver les retire à nouveau.",
+        "it": "Aggiunge capabilities di configurazione come numeri di calibrazione e pulsanti di riavvio. Disattivandole vengono rimosse.",
+        "ko": "보정 숫자와 재시작 버튼 같은 구성 capabilities를 추가합니다. 끄면 다시 제거됩니다.",
+        "nl": "Voegt configuratie-capabilities toe, zoals kalibratienummers en herstartknoppen. Uitschakelen verwijdert ze weer.",
+        "no": "Legger til konfigurasjons-capabilities som kalibreringsnumre og omstartsknapper. Hvis du slår dem av, fjernes de igjen.",
+        "pl": "Dodaje capabilities konfiguracyjne, takie jak numery kalibracji i przyciski restartu. Wyłączenie usuwa je ponownie.",
+        "ru": "Добавляет конфигурационные capabilities, например числа калибровки и кнопки перезагрузки. Отключение снова удаляет их.",
+        "sv": "Lägger till konfigurations-capabilities som kalibreringsnummer och omstartsknappar. Om du stänger av dem tas de bort igen."
+      }
+    }
+  ]
+}

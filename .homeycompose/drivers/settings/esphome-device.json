@@ -1,0 +1,1293 @@
+{
+  "type": "group",
+  "label": {
+    "en": "Device",
+    "ar": "جهاز",
+    "da": "Enhed",
+    "de": "Gerät",
+    "es": "Dispositivo",
+    "fr": "Appareil",
+    "it": "Dispositivo",
+    "ko": "장치",
+    "nl": "Apparaat",
+    "no": "Enhet",
+    "pl": "Urządzenie",
+    "ru": "Устройство",
+    "sv": "Enhet"
+  },
+  "children": [
+    {
+      "id": "device_class",
+      "type": "dropdown",
+      "label": {
+        "en": "Device class",
+        "ar": "فئة الجهاز",
+        "da": "Enhedsklasse",
+        "de": "Geräteklasse",
+        "es": "Clase de dispositivo",
+        "fr": "Classe d’appareil",
+        "it": "Classe dispositivo",
+        "ko": "기기 클래스",
+        "nl": "Apparaatklasse",
+        "no": "Enhetsklasse",
+        "pl": "Klasa urządzenia",
+        "ru": "Класс устройства",
+        "sv": "Enhetsklass"
+      },
+      "value": "auto",
+      "hint": {
+        "en": "Auto keeps the class detected from entities.",
+        "ar": "تلقائي يستخدم فئة الجهاز المكتشفة من الـ capabilities.",
+        "da": "Automatisk bruger den enhedsklasse, der er registreret ud fra capabilities.",
+        "de": "Automatisch verwendet die aus den Capabilities erkannte Geräteklasse.",
+        "es": "Automático usa la clase de dispositivo detectada a partir de las capabilities.",
+        "fr": "Automatique utilise la classe d’appareil détectée à partir des capabilities.",
+        "it": "Automatico usa la classe dispositivo rilevata dalle capabilities.",
+        "ko": "자동은 capabilities에서 감지된 기기 클래스를 사용합니다.",
+        "nl": "Automatisch gebruikt de apparaatklasse die uit de capabilities is herkend.",
+        "no": "Automatisk bruker enhetsklassen som er registrert ut fra capabilities.",
+        "pl": "Automatycznie używa klasy urządzenia rozpoznanej na podstawie capabilities.",
+        "ru": "Автоматически использует класс устройства, определённый по capabilities.",
+        "sv": "Automatiskt använder den enhetsklass som identifierats från capabilities."
+      },
+      "values": [
+        {
+          "id": "auto",
+          "label": {
+            "en": "Auto (from device)",
+            "ar": "تلقائي (من الجهاز)",
+            "da": "Automatisk (fra enhed)",
+            "de": "Automatisch (vom Gerät)",
+            "es": "Automático (del dispositivo)",
+            "fr": "Automatique (depuis l’appareil)",
+            "it": "Automatico (dal dispositivo)",
+            "ko": "자동 (장치에서)",
+            "nl": "Automatisch (van apparaat)",
+            "no": "Automatisk (fra enhet)",
+            "pl": "Automatycznie (z urządzenia)",
+            "ru": "Автоматически (с устройства)",
+            "sv": "Automatiskt (från enhet)"
+          }
+        },
+        {
+          "id": "airconditioning",
+          "label": {
+            "en": "Air conditioning",
+            "ar": "مكيف هواء",
+            "da": "Klimaanlæg",
+            "de": "Klimaanlage",
+            "es": "Aire acondicionado",
+            "fr": "Climatiseur",
+            "it": "Climatizzatore",
+            "ko": "에어컨",
+            "nl": "Airconditioning",
+            "no": "Klimaanlegg",
+            "pl": "Klimatyzator",
+            "ru": "Кондиционер",
+            "sv": "Luftkonditionering"
+          }
+        },
+        {
+          "id": "airfryer",
+          "label": {
+            "en": "Air fryer",
+            "ar": "قلاية هوائية",
+            "da": "Airfryer",
+            "de": "Heißluftfritteuse",
+            "es": "Freidora de aire",
+            "fr": "Friteuse à air",
+            "it": "Friggitrice ad aria",
+            "ko": "에어프라이어",
+            "nl": "Airfryer",
+            "no": "Airfryer",
+            "pl": "Frytkownica beztłuszczowa",
+            "ru": "Аэрогриль",
+            "sv": "Airfryer"
+          }
+        },
+        {
+          "id": "airpurifier",
+          "label": {
+            "en": "Air purifier",
+            "ar": "منقّي هواء",
+            "da": "Luftrenser",
+            "de": "Luftreiniger",
+            "es": "Purificador de aire",
+            "fr": "Purificateur d’air",
+            "it": "Purificatore d’aria",
+            "ko": "공기청정기",
+            "nl": "Luchtreiniger",
+            "no": "Luftrenser",
+            "pl": "Oczyszczacz powietrza",
+            "ru": "Очиститель воздуха",
+            "sv": "Luftrenare"
+          }
+        },
+        {
+          "id": "airtreatment",
+          "label": {
+            "en": "Air treatment",
+            "ar": "معالجة الهواء",
+            "da": "Luftbehandling",
+            "de": "Luftbehandlung",
+            "es": "Tratamiento de aire",
+            "fr": "Traitement de l’air",
+            "it": "Trattamento aria",
+            "ko": "공기 처리",
+            "nl": "Luchtbehandeling",
+            "no": "Luftbehandling",
+            "pl": "Uzdatnianie powietrza",
+            "ru": "Обработка воздуха",
+            "sv": "Luftbehandling"
+          }
+        },
+        {
+          "id": "amplifier",
+          "label": {
+            "en": "Amplifier",
+            "ar": "مضخّم",
+            "da": "Forstærker",
+            "de": "Verstärker",
+            "es": "Amplificador",
+            "fr": "Amplificateur",
+            "it": "Amplificatore",
+            "ko": "앰프",
+            "nl": "Versterker",
+            "no": "Forsterker",
+            "pl": "Wzmacniacz",
+            "ru": "Усилитель",
+            "sv": "Förstärkare"
+          }
+        },
+        {
+          "id": "battery",
+          "label": {
+            "en": "Battery",
+            "ar": "بطارية",
+            "da": "Batteri",
+            "de": "Batterie",
+            "es": "Batería",
+            "fr": "Batterie",
+            "it": "Batteria",
+            "ko": "배터리",
+            "nl": "Batterij",
+            "no": "Batteri",
+            "pl": "Bateria",
+            "ru": "Батарея",
+            "sv": "Batteri"
+          }
+        },
+        {
+          "id": "bicycle",
+          "label": {
+            "en": "Bicycle",
+            "ar": "دراجة",
+            "da": "Cykel",
+            "de": "Fahrrad",
+            "es": "Bicicleta",
+            "fr": "Vélo",
+            "it": "Bicicletta",
+            "ko": "자전거",
+            "nl": "Fiets",
+            "no": "Sykkel",
+            "pl": "Rower",
+            "ru": "Велосипед",
+            "sv": "Cykel"
+          }
+        },
+        {
+          "id": "blinds",
+          "label": {
+            "en": "Blinds",
+            "ar": "ستائر",
+            "da": "Persienner",
+            "de": "Jalousien",
+            "es": "Persianas",
+            "fr": "Stores",
+            "it": "Tende alla veneziana",
+            "ko": "블라인드",
+            "nl": "Jaloezieën",
+            "no": "Persienner",
+            "pl": "Żaluzje",
+            "ru": "Жалюзи",
+            "sv": "Persienner"
+          }
+        },
+        {
+          "id": "boiler",
+          "label": {
+            "en": "Boiler",
+            "ar": "غلاية",
+            "da": "Keddel",
+            "de": "Heizkessel",
+            "es": "Caldera",
+            "fr": "Chaudière",
+            "it": "Caldaia",
+            "ko": "보일러",
+            "nl": "Ketel",
+            "no": "Kjele",
+            "pl": "Kocioł",
+            "ru": "Котёл",
+            "sv": "Panna"
+          }
+        },
+        {
+          "id": "bridge",
+          "label": {
+            "en": "Bridge"
+          }
+        },
+        {
+          "id": "button",
+          "label": {
+            "en": "Button",
+            "ar": "زر",
+            "da": "Knap",
+            "de": "Taste",
+            "es": "Botón",
+            "fr": "Bouton",
+            "it": "Pulsante",
+            "ko": "버튼",
+            "nl": "Knop",
+            "no": "Knapp",
+            "pl": "Przycisk",
+            "ru": "Кнопка",
+            "sv": "Knapp"
+          }
+        },
+        {
+          "id": "camera",
+          "label": {
+            "en": "Camera"
+          }
+        },
+        {
+          "id": "car",
+          "label": {
+            "en": "Car",
+            "ar": "سيارة",
+            "da": "Bil",
+            "de": "Auto",
+            "es": "Coche",
+            "fr": "Voiture",
+            "it": "Auto",
+            "ko": "자동차",
+            "nl": "Auto",
+            "no": "Bil",
+            "pl": "Samochód",
+            "ru": "Автомобиль",
+            "sv": "Bil"
+          }
+        },
+        {
+          "id": "coffeemachine",
+          "label": {
+            "en": "Coffee machine",
+            "ar": "آلة قهوة",
+            "da": "Kaffemaskine",
+            "de": "Kaffeemaschine",
+            "es": "Cafetera",
+            "fr": "Machine à café",
+            "it": "Macchina da caffè",
+            "ko": "커피 머신",
+            "nl": "Koffiezetapparaat",
+            "no": "Kaffemaskin",
+            "pl": "Ekspres do kawy",
+            "ru": "Кофемашина",
+            "sv": "Kaffebryggare"
+          }
+        },
+        {
+          "id": "cooktop",
+          "label": {
+            "en": "Cooktop",
+            "ar": "سطح طبخ",
+            "da": "Kogeplade",
+            "de": "Kochfeld",
+            "es": "Placa de cocina",
+            "fr": "Table de cuisson",
+            "it": "Piano cottura",
+            "ko": "쿡탑",
+            "nl": "Kookplaat",
+            "no": "Platetopp",
+            "pl": "Płyta kuchenna",
+            "ru": "Варочная панель",
+            "sv": "Häll"
+          }
+        },
+        {
+          "id": "curtain",
+          "label": {
+            "en": "Curtain",
+            "ar": "ستارة",
+            "da": "Gardin",
+            "de": "Vorhang",
+            "es": "Cortina",
+            "fr": "Rideau",
+            "it": "Tenda",
+            "ko": "커튼",
+            "nl": "Gordijn",
+            "no": "Gardiner",
+            "pl": "Zasłona",
+            "ru": "Штора",
+            "sv": "Gardin"
+          }
+        },
+        {
+          "id": "dehumidifier",
+          "label": {
+            "en": "Dehumidifier",
+            "ar": "مزيل رطوبة",
+            "da": "Affugter",
+            "de": "Luftentfeuchter",
+            "es": "Deshumidificador",
+            "fr": "Déshumidificateur",
+            "it": "Deumidificatore",
+            "ko": "제습기",
+            "nl": "Ontvochtiger",
+            "no": "Avfukter",
+            "pl": "Osuszacz",
+            "ru": "Осушитель",
+            "sv": "Avfuktare"
+          }
+        },
+        {
+          "id": "diffuser",
+          "label": {
+            "en": "Diffuser"
+          }
+        },
+        {
+          "id": "dishwasher",
+          "label": {
+            "en": "Dishwasher",
+            "ar": "غسالة صحون",
+            "da": "Opvaskemaskine",
+            "de": "Geschirrspüler",
+            "es": "Lavavajillas",
+            "fr": "Lave-vaisselle",
+            "it": "Lavastoviglie",
+            "ko": "식기세척기",
+            "nl": "Vaatwasser",
+            "no": "Oppvaskmaskin",
+            "pl": "Zmywarka",
+            "ru": "Посудомоечная машина",
+            "sv": "Diskmaskin"
+          }
+        },
+        {
+          "id": "doorbell",
+          "label": {
+            "en": "Doorbell",
+            "ar": "جرس باب",
+            "da": "Dørklokke",
+            "de": "Türklingel",
+            "es": "Timbre",
+            "fr": "Sonnette",
+            "it": "Campanello",
+            "ko": "초인종",
+            "nl": "Deurbel",
+            "no": "Dørklokke",
+            "pl": "Dzwonek do drzwi",
+            "ru": "Дверной звонок",
+            "sv": "Dörrklocka"
+          }
+        },
+        {
+          "id": "dryer",
+          "label": {
+            "en": "Dryer",
+            "ar": "نشافة",
+            "da": "Tørretumbler",
+            "de": "Trockner",
+            "es": "Secadora",
+            "fr": "Sèche-linge",
+            "it": "Asciugatrice",
+            "ko": "건조기",
+            "nl": "Droger",
+            "no": "Tørketrommel",
+            "pl": "Suszarka",
+            "ru": "Сушильная машина",
+            "sv": "Torktumlare"
+          }
+        },
+        {
+          "id": "evcharger",
+          "label": {
+            "en": "EV charger",
+            "ar": "شاحن سيارة كهربائية",
+            "da": "EV-lader",
+            "de": "EV-Ladegerät",
+            "es": "Cargador EV",
+            "fr": "Chargeur VE",
+            "it": "Caricabatterie EV",
+            "ko": "EV 충전기",
+            "nl": "EV-lader",
+            "no": "EV-lader",
+            "pl": "Ładowarka EV",
+            "ru": "Зарядное устройство EV",
+            "sv": "EV-laddare"
+          }
+        },
+        {
+          "id": "fan",
+          "label": {
+            "en": "Fan",
+            "ar": "مروحة",
+            "da": "Ventilator",
+            "de": "Lüfter",
+            "es": "Ventilador",
+            "fr": "Ventilateur",
+            "it": "Ventilatore",
+            "ko": "팬",
+            "nl": "Ventilator",
+            "no": "Vifte",
+            "pl": "Wentylator",
+            "ru": "Вентилятор",
+            "sv": "Fläkt"
+          }
+        },
+        {
+          "id": "faucet",
+          "label": {
+            "en": "Faucet",
+            "ar": "صنبور",
+            "da": "Hane",
+            "de": "Wasserhahn",
+            "es": "Grifo",
+            "fr": "Robinet",
+            "it": "Rubinetto",
+            "ko": "수도꼭지",
+            "nl": "Kraan",
+            "no": "Kran",
+            "pl": "Kran",
+            "ru": "Кран",
+            "sv": "Kran"
+          }
+        },
+        {
+          "id": "fireplace",
+          "label": {
+            "en": "Fireplace",
+            "ar": "مدفأة",
+            "da": "Pejs",
+            "de": "Kamin",
+            "es": "Chimenea",
+            "fr": "Cheminée",
+            "it": "Camino",
+            "ko": "벽난로",
+            "nl": "Open haard",
+            "no": "Peis",
+            "pl": "Kominek",
+            "ru": "Камин",
+            "sv": "Öppen spis"
+          }
+        },
+        {
+          "id": "freezer",
+          "label": {
+            "en": "Freezer",
+            "ar": "فريزر",
+            "da": "Fryser",
+            "de": "Gefrierschrank",
+            "es": "Congelador",
+            "fr": "Congélateur",
+            "it": "Congelatore",
+            "ko": "냉동고",
+            "nl": "Diepvries",
+            "no": "Fryser",
+            "pl": "Zamrażarka",
+            "ru": "Морозильник",
+            "sv": "Frys"
+          }
+        },
+        {
+          "id": "fridge_and_freezer",
+          "label": {
+            "en": "Fridge and freezer",
+            "ar": "ثلاجة مع فريزر",
+            "da": "Køleskab med fryser",
+            "de": "Kühlschrank mit Gefrierfach",
+            "es": "Frigorífico con congelador",
+            "fr": "Réfrigérateur avec congélateur",
+            "it": "Frigorifero con congelatore",
+            "ko": "냉장고 겸 냉동고",
+            "nl": "Koelkast met vriesvak",
+            "no": "Kjøleskap med fryser",
+            "pl": "Lodówka z zamrażarką",
+            "ru": "Холодильник с морозильной камерой",
+            "sv": "Kylskåp med frys"
+          }
+        },
+        {
+          "id": "fridge",
+          "label": {
+            "en": "Fridge",
+            "ar": "ثلاجة",
+            "da": "Køleskab",
+            "de": "Kühlschrank",
+            "es": "Frigorífico",
+            "fr": "Réfrigérateur",
+            "it": "Frigorifero",
+            "ko": "냉장고",
+            "nl": "Koelkast",
+            "no": "Kjøleskap",
+            "pl": "Lodówka",
+            "ru": "Холодильник",
+            "sv": "Kylskåp"
+          }
+        },
+        {
+          "id": "fryer",
+          "label": {
+            "en": "Fryer",
+            "ar": "قلاية",
+            "da": "Frituregryde",
+            "de": "Fritteuse",
+            "es": "Freidora",
+            "fr": "Friteuse",
+            "it": "Friggitrice",
+            "ko": "튀기",
+            "nl": "Friteuse",
+            "no": "Frityrkoker",
+            "pl": "Frytkownica",
+            "ru": "Фритюрница",
+            "sv": "Fritös"
+          }
+        },
+        {
+          "id": "gameconsole",
+          "label": {
+            "en": "Game console",
+            "ar": "جهاز ألعاب",
+            "da": "Spillekonsol",
+            "de": "Spielkonsole",
+            "es": "Consola de juegos",
+            "fr": "Console de jeux",
+            "it": "Console di gioco",
+            "ko": "게임 콘솔",
+            "nl": "Spelcomputer",
+            "no": "Spillkonsoll",
+            "pl": "Konsola do gier",
+            "ru": "Игровая консоль",
+            "sv": "Spelkonsol"
+          }
+        },
+        {
+          "id": "garagedoor",
+          "label": {
+            "en": "Garage door",
+            "ar": "باب مرآب",
+            "da": "Garagedør",
+            "de": "Garagentor",
+            "es": "Puerta de garaje",
+            "fr": "Porte de garage",
+            "it": "Porta del garage",
+            "ko": "차고 문",
+            "nl": "Garagedeur",
+            "no": "Garasjeport",
+            "pl": "Brama garażowa",
+            "ru": "Гаражные ворота",
+            "sv": "Garageport"
+          }
+        },
+        {
+          "id": "grill",
+          "label": {
+            "en": "Grill"
+          }
+        },
+        {
+          "id": "heater",
+          "label": {
+            "en": "Heater",
+            "ar": "مدفأة",
+            "da": "Varmeapparat",
+            "de": "Heizung",
+            "es": "Calefactor",
+            "fr": "Chauffage",
+            "it": "Riscaldamento",
+            "ko": "히터",
+            "nl": "Verwarming",
+            "no": "Varmeapparat",
+            "pl": "Ogrzewanie",
+            "ru": "Обогреватель",
+            "sv": "Värmare"
+          }
+        },
+        {
+          "id": "heatpump",
+          "label": {
+            "en": "Heat pump",
+            "ar": "مضخة حرارية",
+            "da": "Varmepumpe",
+            "de": "Wärmepumpe",
+            "es": "Bomba de calor",
+            "fr": "Pompe à chaleur",
+            "it": "Pompa di calore",
+            "ko": "히트펌프",
+            "nl": "Warmtepomp",
+            "no": "Varmepumpe",
+            "pl": "Pompa ciepła",
+            "ru": "Тепловой насос",
+            "sv": "Värmepump"
+          }
+        },
+        {
+          "id": "homealarm",
+          "label": {
+            "en": "Home alarm",
+            "ar": "إنذار المنزل",
+            "da": "Husalarm",
+            "de": "Alarmanlage",
+            "es": "Alarma del hogar",
+            "fr": "Alarme maison",
+            "it": "Allarme casa",
+            "ko": "홈 알람",
+            "nl": "Huisalarm",
+            "no": "Husalarm",
+            "pl": "Alarm domowy",
+            "ru": "Домашняя сигнализация",
+            "sv": "Hemlarm"
+          }
+        },
+        {
+          "id": "hood",
+          "label": {
+            "en": "Hood",
+            "ar": "شفاط",
+            "da": "Emhætte",
+            "de": "Dunstabzugshaube",
+            "es": "Campana extractora",
+            "fr": "Hotte",
+            "it": "Cappa",
+            "ko": "후드",
+            "nl": "Afzuigkap",
+            "no": "Kjøkkenvifte",
+            "pl": "Okap",
+            "ru": "Вытяжка",
+            "sv": "Köksfläkt"
+          }
+        },
+        {
+          "id": "humidifier",
+          "label": {
+            "en": "Humidifier",
+            "ar": "مرطّب",
+            "da": "Luftfugter",
+            "de": "Luftbefeuchter",
+            "es": "Humidificador",
+            "fr": "Humidificateur",
+            "it": "Umidificatore",
+            "ko": "가습기",
+            "nl": "Luchtbevochtiger",
+            "no": "Luftfukter",
+            "pl": "Nawilżacz",
+            "ru": "Увлажнитель",
+            "sv": "Luftfuktare"
+          }
+        },
+        {
+          "id": "kettle",
+          "label": {
+            "en": "Kettle",
+            "ar": "غلاية ماء",
+            "da": "Elkedel",
+            "de": "Wasserkocher",
+            "es": "Hervidor",
+            "fr": "Bouilloire",
+            "it": "Bollitore",
+            "ko": "주전자",
+            "nl": "Waterkoker",
+            "no": "Vannkoker",
+            "pl": "Czajnik",
+            "ru": "Чайник",
+            "sv": "Vattenkokare"
+          }
+        },
+        {
+          "id": "lawnmower",
+          "label": {
+            "en": "Lawnmower",
+            "ar": "جزّازة عشب",
+            "da": "Plæneklipper",
+            "de": "Rasenmäher",
+            "es": "Cortacésped",
+            "fr": "Tondeuse",
+            "it": "Tosaerba",
+            "ko": "잔디깎이",
+            "nl": "Grasmaaier",
+            "no": "Gressklipper",
+            "pl": "Kosiarka",
+            "ru": "Газонокосилка",
+            "sv": "Gräsklippare"
+          }
+        },
+        {
+          "id": "light",
+          "label": {
+            "en": "Light",
+            "ar": "ضوء",
+            "da": "Lys",
+            "de": "Lampe",
+            "es": "Luz",
+            "fr": "Lumière",
+            "it": "Luce",
+            "ko": "조명",
+            "nl": "Lamp",
+            "no": "Lys",
+            "pl": "Światło",
+            "ru": "Лампа",
+            "sv": "Lampa"
+          }
+        },
+        {
+          "id": "lock",
+          "label": {
+            "en": "Lock",
+            "ar": "قفل",
+            "da": "Lås",
+            "de": "Schloss",
+            "es": "Cerradura",
+            "fr": "Serrure",
+            "it": "Serratura",
+            "ko": "잠금장치",
+            "nl": "Slot",
+            "no": "Lås",
+            "pl": "Zamek",
+            "ru": "Замок",
+            "sv": "Lås"
+          }
+        },
+        {
+          "id": "mediaplayer",
+          "label": {
+            "en": "Media player",
+            "ar": "مشغّل وسائط",
+            "da": "Medieafspiller",
+            "de": "Mediaplayer",
+            "es": "Reproductor multimedia",
+            "fr": "Lecteur multimédia",
+            "it": "Lettore multimediale",
+            "ko": "미디어 플레이어",
+            "nl": "Mediaspeler",
+            "no": "Mediespiller",
+            "pl": "Odtwarzacz multimediów",
+            "ru": "Медиаплеер",
+            "sv": "Mediaspelare"
+          }
+        },
+        {
+          "id": "microwave",
+          "label": {
+            "en": "Microwave",
+            "ar": "ميكروويف",
+            "da": "Mikroovn",
+            "de": "Mikrowelle",
+            "es": "Microondas",
+            "fr": "Micro-ondes",
+            "it": "Microonde",
+            "ko": "전자레인지",
+            "nl": "Magnetron",
+            "no": "Mikrobølgeovn",
+            "pl": "Kuchenka mikrofalowa",
+            "ru": "Микроволновая печь",
+            "sv": "Mikrovågsugn"
+          }
+        },
+        {
+          "id": "mop",
+          "label": {
+            "en": "Mop",
+            "ar": "ممسحة",
+            "da": "Gulvmoppe",
+            "de": "Wischroboter",
+            "es": "Fregona",
+            "fr": "Robot serpillière",
+            "it": "Mocio robot",
+            "ko": "물걸레 로봇",
+            "nl": "Dweilrobot",
+            "no": "Gulvmopp",
+            "pl": "Mop",
+            "ru": "Швабра-робот",
+            "sv": "Golvmopp"
+          }
+        },
+        {
+          "id": "multicooker",
+          "label": {
+            "en": "Multi cooker",
+            "ar": "طنجرة متعددة",
+            "da": "Multicooker",
+            "de": "Multikocher",
+            "es": "Olla multifunción",
+            "fr": "Multicuiseur",
+            "it": "Multicooker",
+            "ko": "멀티쿠커",
+            "nl": "Multicooker",
+            "no": "Multikoker",
+            "pl": "Multicooker",
+            "ru": "Мультиварка",
+            "sv": "Multikokare"
+          }
+        },
+        {
+          "id": "networkrouter",
+          "label": {
+            "en": "Network router",
+            "ar": "موجّه شبكة",
+            "da": "Netværksrouter",
+            "de": "Netzwerkrouter",
+            "es": "Router de red",
+            "fr": "Routeur réseau",
+            "it": "Router di rete",
+            "ko": "네트워크 라우터",
+            "nl": "Netwerkrouter",
+            "no": "Nettverksruter",
+            "pl": "Router sieciowy",
+            "ru": "Сетевой маршрутизатор",
+            "sv": "Nätverksrouter"
+          }
+        },
+        {
+          "id": "other",
+          "label": {
+            "en": "Other",
+            "ar": "أخرى",
+            "da": "Andet",
+            "de": "Sonstiges",
+            "es": "Otro",
+            "fr": "Autre",
+            "it": "Altro",
+            "ko": "기타",
+            "nl": "Overig",
+            "no": "Annet",
+            "pl": "Inne",
+            "ru": "Другое",
+            "sv": "Övrigt"
+          }
+        },
+        {
+          "id": "oven_and_microwave",
+          "label": {
+            "en": "Oven and microwave",
+            "ar": "فرن مع ميكروويف",
+            "da": "Ovn med mikroovn",
+            "de": "Backofen mit Mikrowelle",
+            "es": "Horno-microondas",
+            "fr": "Four avec micro-ondes",
+            "it": "Forno con microonde",
+            "ko": "콤비오븐",
+            "nl": "Oven met magnetronfunctie",
+            "no": "Ovn med mikrobølgeovn",
+            "pl": "Piekarnik z mikrofalami",
+            "ru": "Духовой шкаф с СВЧ",
+            "sv": "Ugn med mikrovågsugn"
+          }
+        },
+        {
+          "id": "oven",
+          "label": {
+            "en": "Oven"
+          }
+        },
+        {
+          "id": "petfeeder",
+          "label": {
+            "en": "Pet feeder",
+            "ar": "مغذّي حيوانات",
+            "da": "Foderautomat",
+            "de": "Futterautomat",
+            "es": "Comedero automático",
+            "fr": "Distributeur de nourriture",
+            "it": "Mangiatoia automatica",
+            "ko": "자동 급식기",
+            "nl": "Voerautomaat",
+            "no": "Fôrautomat",
+            "pl": "Automat do karmienia",
+            "ru": "Кормушка",
+            "sv": "Foderautomat"
+          }
+        },
+        {
+          "id": "pump",
+          "label": {
+            "en": "Pump",
+            "ar": "مضخة",
+            "da": "Pumpe",
+            "de": "Pumpe",
+            "es": "Bomba",
+            "fr": "Pompe",
+            "it": "Pompa",
+            "ko": "펌프",
+            "nl": "Pomp",
+            "no": "Pumpe",
+            "pl": "Pompa",
+            "ru": "Насос",
+            "sv": "Pump"
+          }
+        },
+        {
+          "id": "radiator",
+          "label": {
+            "en": "Radiator"
+          }
+        },
+        {
+          "id": "remote",
+          "label": {
+            "en": "Remote",
+            "ar": "جهاز تحكم",
+            "da": "Fjernbetjening",
+            "de": "Fernbedienung",
+            "es": "Mando a distancia",
+            "fr": "Télécommande",
+            "it": "Telecomando",
+            "ko": "리모컨",
+            "nl": "Afstandsbediening",
+            "no": "Fjernkontroll",
+            "pl": "Pilotok",
+            "ru": "Пульт",
+            "sv": "Fjärrkontroll"
+          }
+        },
+        {
+          "id": "scooter",
+          "label": {
+            "en": "Scooter"
+          }
+        },
+        {
+          "id": "sensor",
+          "label": {
+            "en": "Sensor"
+          }
+        },
+        {
+          "id": "service",
+          "label": {
+            "en": "Service"
+          }
+        },
+        {
+          "id": "settopbox",
+          "label": {
+            "en": "Set-top box",
+            "ar": "جهاز استقبال",
+            "da": "TV-boks",
+            "de": "Receiver",
+            "es": "Decodificador",
+            "fr": "Décodeur",
+            "it": "Decoder",
+            "ko": "셋톱박스",
+            "nl": "Decoder",
+            "no": "TV-boks",
+            "pl": "Dekoder",
+            "ru": "ТВ-приставка",
+            "sv": "TV-box"
+          }
+        },
+        {
+          "id": "shutterblinds",
+          "label": {
+            "en": "Shutter blinds",
+            "ar": "ستائر دوّارة",
+            "da": "Rulleskodder",
+            "de": "Rollläden",
+            "es": "Persianas enrollables",
+            "fr": "Volets roulants",
+            "it": "Tapparelle",
+            "ko": "셔터 블라인드",
+            "nl": "Rolluiken",
+            "no": "Rulleskodder",
+            "pl": "Rolety",
+            "ru": "Рулонные жалюзи",
+            "sv": "Rulljalusier"
+          }
+        },
+        {
+          "id": "siren",
+          "label": {
+            "en": "Siren",
+            "ar": "صفارة إنذار",
+            "da": "Sirene",
+            "de": "Sirene",
+            "es": "Sirena",
+            "fr": "Sirène",
+            "it": "Sirena",
+            "ko": "사이렌",
+            "nl": "Sirene",
+            "no": "Sirene",
+            "pl": "Syrena",
+            "ru": "Сирена",
+            "sv": "Siren"
+          }
+        },
+        {
+          "id": "smokealarm",
+          "label": {
+            "en": "Smoke alarm",
+            "ar": "كاشف دخان",
+            "da": "Røgalarm",
+            "de": "Rauchmelder",
+            "es": "Detector de humo",
+            "fr": "Détecteur de fumée",
+            "it": "Rilevatore di fumo",
+            "ko": "연기 감지기",
+            "nl": "Rookmelder",
+            "no": "Røykvarsler",
+            "pl": "Czujnik dymu",
+            "ru": "Дымовой извещатель",
+            "sv": "Brandvarnare"
+          }
+        },
+        {
+          "id": "socket",
+          "label": {
+            "en": "Socket",
+            "ar": "مقبس حائطي",
+            "da": "Stikkontakt",
+            "de": "Steckdose",
+            "es": "Enchufe",
+            "fr": "Prise murale",
+            "it": "Presa a muro",
+            "ko": "벽면 콘센트",
+            "nl": "Plug",
+            "no": "Stikkontakt",
+            "pl": "Gniazdko",
+            "ru": "Розетка",
+            "sv": "Väggkontakt"
+          }
+        },
+        {
+          "id": "solarpanel",
+          "label": {
+            "en": "Solar panel",
+            "ar": "لوح شمسي",
+            "da": "Solpanel",
+            "de": "Solarpanel",
+            "es": "Panel solar",
+            "fr": "Panneau solaire",
+            "it": "Pannello solare",
+            "ko": "태양광 패널",
+            "nl": "Zonnepaneel",
+            "no": "Solcellepanel",
+            "pl": "Panel słoneczny",
+            "ru": "Солнечная панель",
+            "sv": "Solpanel"
+          }
+        },
+        {
+          "id": "speaker",
+          "label": {
+            "en": "Speaker"
+          }
+        },
+        {
+          "id": "sprinkler",
+          "label": {
+            "en": "Sprinkler",
+            "ar": "رشّاش",
+            "da": "Sprinkler",
+            "de": "Sprinkler",
+            "es": "Aspersor",
+            "fr": "Arroseur",
+            "it": "Irrigatore",
+            "ko": "스프링클러",
+            "nl": "Sproeier",
+            "no": "Sprinkler",
+            "pl": "Zraszacz",
+            "ru": "Разбрызгиватель",
+            "sv": "Sprinkler"
+          }
+        },
+        {
+          "id": "sunshade",
+          "label": {
+            "en": "Sunshade",
+            "ar": "مظلّة",
+            "da": "Markise",
+            "de": "Sonnenschutz",
+            "es": "Toldo",
+            "fr": "Store solaire",
+            "it": "Tenda da sole",
+            "ko": "차양",
+            "nl": "Zonnescherm",
+            "no": "Markise",
+            "pl": "Markiza",
+            "ru": "Навес",
+            "sv": "Markis"
+          }
+        },
+        {
+          "id": "thermostat",
+          "label": {
+            "en": "Thermostat",
+            "ar": "منظم حرارة",
+            "da": "Termostat",
+            "de": "Thermostat",
+            "es": "Termostato",
+            "fr": "Thermostat",
+            "it": "Termostato",
+            "ko": "온도조절기",
+            "nl": "Thermostaat",
+            "no": "Termostat",
+            "pl": "Termostat",
+            "ru": "Термостат",
+            "sv": "Termostat"
+          }
+        },
+        {
+          "id": "tv",
+          "label": {
+            "en": "TV"
+          }
+        },
+        {
+          "id": "vacuumcleaner",
+          "label": {
+            "en": "Vacuum cleaner",
+            "ar": "مكنسة كهربائية",
+            "da": "Støvsuger",
+            "de": "Staubsauger",
+            "es": "Aspiradora",
+            "fr": "Aspirateur",
+            "it": "Aspirapolvere",
+            "ko": "청소기",
+            "nl": "Stofzuiger",
+            "no": "Støvsuger",
+            "pl": "Odkurzacz",
+            "ru": "Пылесос",
+            "sv": "Dammsugare"
+          }
+        },
+        {
+          "id": "vehicle",
+          "label": {
+            "en": "Vehicle",
+            "ar": "مركبة",
+            "da": "Køretøj",
+            "de": "Fahrzeug",
+            "es": "Vehículo",
+            "fr": "Véhicule",
+            "it": "Veicolo",
+            "ko": "차량",
+            "nl": "Voertuig",
+            "no": "Kjøretøy",
+            "pl": "Pojazd",
+            "ru": "Транспорт",
+            "sv": "Fordon"
+          }
+        },
+        {
+          "id": "washer_and_dryer",
+          "label": {
+            "en": "Washer and dryer",
+            "ar": "غسالة مع تجفيف",
+            "da": "Vaskemaskine med tørretumbler",
+            "de": "Waschmaschine mit Trockner",
+            "es": "Lavadora-secadora",
+            "fr": "Lave-linge avec séchage",
+            "it": "Lavatrice con asciugatrice",
+            "ko": "세탁기 겸 건조기",
+            "nl": "Wasmachine met droogfunctie",
+            "no": "Vaskemaskin med tørking",
+            "pl": "Pralka z funkcją suszenia",
+            "ru": "Стиральная машина с сушкой",
+            "sv": "Tvättmaskin med torktumlare"
+          }
+        },
+        {
+          "id": "washer",
+          "label": {
+            "en": "Washer",
+            "ar": "غسالة",
+            "da": "Vaskemaskine",
+            "de": "Waschmaschine",
+            "es": "Lavadora",
+            "fr": "Lave-linge",
+            "it": "Lavatrice",
+            "ko": "세탁기",
+            "nl": "Wasmachine",
+            "no": "Vaskemaskin",
+            "pl": "Pralka",
+            "ru": "Стиральная машина",
+            "sv": "Tvättmaskin"
+          }
+        },
+        {
+          "id": "waterheater",
+          "label": {
+            "en": "Water heater",
+            "ar": "سخان ماء",
+            "da": "Vandvarmer",
+            "de": "Warmwasserbereiter",
+            "es": "Calentador de agua",
+            "fr": "Chauffe-eau",
+            "it": "Scaldacqua",
+            "ko": "온수기",
+            "nl": "Boiler",
+            "no": "Varmtvannsbereder",
+            "pl": "Podgrzewacz wody",
+            "ru": "Водонагреватель",
+            "sv": "Varmvattenberedare"
+          }
+        },
+        {
+          "id": "waterpurifier",
+          "label": {
+            "en": "Water purifier",
+            "ar": "منقّي مياه",
+            "da": "Vandrenser",
+            "de": "Wasserfilter",
+            "es": "Purificador de agua",
+            "fr": "Purificateur d’eau",
+            "it": "Purificatore d’acqua",
+            "ko": "정수기",
+            "nl": "Waterzuiveraar",
+            "no": "Vannrenser",
+            "pl": "Oczyszczacz wody",
+            "ru": "Очиститель воды",
+            "sv": "Vattenrenare"
+          }
+        },
+        {
+          "id": "watervalve",
+          "label": {
+            "en": "Water valve",
+            "ar": "صمام ماء",
+            "da": "Vandventil",
+            "de": "Wasserventil",
+            "es": "Válvula de agua",
+            "fr": "Vanne d’eau",
+            "it": "Valvola dell’acqua",
+            "ko": "수도 밸브",
+            "nl": "Waterklep",
+            "no": "Vannventil",
+            "pl": "Zawór wody",
+            "ru": "Водяной клапан",
+            "sv": "Vattenventil"
+          }
+        },
+        {
+          "id": "windowcoverings",
+          "label": {
+            "en": "Window coverings",
+            "ar": "أغطية النوافذ",
+            "da": "Vinduesbeklædning",
+            "de": "Fensterabdeckung",
+            "es": "Cubreventanas",
+            "fr": "Couverture de fenêtre",
+            "it": "Coperture per finestre",
+            "ko": "창문 덮개",
+            "nl": "Raambekleding",
+            "no": "Vindusskjerming",
+            "pl": "Osłony okienne",
+            "ru": "Оконное покрытие",
+            "sv": "Fönstertäckning"
+          }
+        }
+      ]
+    }
+  ]
+}

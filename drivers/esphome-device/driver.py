@@ -1,3 +1,3 @@
-from homey_esphomedriver import EspHomeDriver
+from app.lib.driver import GenericEspHomeDriver
 
-homey_export = EspHomeDriver
+homey_export = GenericEspHomeDriver

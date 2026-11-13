@@ -41,7 +41,6 @@
     "handshake": "Den krypterede forbindelse kunne ikke oprettes. Tjek krypteringsnøglen, og at enhedens firmware er opdateret.",
     "device_mismatch": "Enheden på denne adresse er ikke den, Homey parrede. Tjek IP-adressen eller DHCP-reservationen.",
     "mac_missing": "ESPHome-enheden har ikke sendt en MAC-adresse.",
-    "no_supported_entities": "Denne ESPHome-enhed har ingen dele, som Homey understøtter.",
     "device_not_connected": "ESPHome-enheden er ikke forbundet",
     "device_not_prepared": "Enheden er ikke klar. Gå tilbage, og opret forbindelsen igen.",
     "no_device_selected": "Ingen enhed valgt",
@@ -68,7 +67,9 @@
       "ssid_too_long": "SSID eller adgangskode er for lang",
       "invalid_value": "Improv-enheden sendte en ugyldig værdi"
     },
-    "project_not_supported": "Dette ESPHome-projekt understøttes ikke af denne Homey-app."
+    "project_not_supported": "Dette ESPHome-projekt understøttes ikke af denne Homey-app.",
+    "setting_invalid": "Denne værdi er ikke gyldig for enheden.",
+    "entity_missing": "Denne enhed har ingen __domain__ med navnet __name__."
   },
   "nativeAppSuggestion": "Gode nyheder! Denne enhed har sin egen app! Søg i Homey App Store efter __appName__.",
   "repair": {
@@ -103,5 +104,8 @@
     "entities_changed": "__device__ har __added__ nye entiteter.",
     "entities_changed_removed": "__device__ tilføjede __added__ entiteter og fjernede __removed__. Du vil måske tjekke dine Flows.",
     "entities_removed": "__device__ fjernede __removed__ entiteter. Du vil måske tjekke dine Flows."
+  },
+  "settings": {
+    "applied_on_wake": "Gemt. Enheden sover og får den nye indstilling, næste gang den vågner."
   }
 }

@@ -41,7 +41,6 @@
     "handshake": "Impossibile stabilire la connessione crittografata. Controlla la chiave di crittografia e che il firmware del dispositivo sia aggiornato.",
     "device_mismatch": "Il dispositivo a questo indirizzo non è quello associato a Homey. Controlla l’indirizzo IP o la prenotazione DHCP.",
     "mac_missing": "Il dispositivo ESPHome non ha inviato un indirizzo MAC.",
-    "no_supported_entities": "Questo dispositivo ESPHome non ha elementi supportati da Homey.",
     "device_not_connected": "Il dispositivo ESPHome non è connesso",
     "device_not_prepared": "Il dispositivo non è pronto. Torna indietro e riconnettiti.",
     "no_device_selected": "Nessun dispositivo selezionato",
@@ -68,7 +67,9 @@
       "ssid_too_long": "SSID o password troppo lunghi",
       "invalid_value": "Il dispositivo Improv ha inviato un valore non valido"
     },
-    "project_not_supported": "Questo progetto ESPHome non è supportato da questa app Homey."
+    "project_not_supported": "Questo progetto ESPHome non è supportato da questa app Homey.",
+    "setting_invalid": "Questo valore non è valido per il dispositivo.",
+    "entity_missing": "Questo dispositivo non ha nessuna entità __domain__ chiamata __name__."
   },
   "nativeAppSuggestion": "Buone notizie! Questo dispositivo ha una propria app! Cerca nel Homey App Store __appName__.",
   "repair": {
@@ -103,5 +104,8 @@
     "entities_changed": "__device__ ha __added__ nuove entità.",
     "entities_changed_removed": "__device__ ha aggiunto __added__ entità e ne ha rimosso __removed__. Forse ti conviene controllare i tuoi Flow.",
     "entities_removed": "__device__ ha rimosso __removed__ entità. Forse ti conviene controllare i tuoi Flow."
+  },
+  "settings": {
+    "applied_on_wake": "Salvato. Il dispositivo è in standby e riceverà la nuova impostazione al prossimo risveglio."
   }
 }

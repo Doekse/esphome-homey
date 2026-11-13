@@ -41,7 +41,6 @@
     "handshake": "Не удалось установить зашифрованное соединение. Проверь ключ шифрования и актуальность прошивки устройства.",
     "device_mismatch": "Устройство по этому адресу — не то, которое сопряг Homey. Проверь IP-адрес или резервирование DHCP.",
     "mac_missing": "Устройство ESPHome не передало MAC-адрес.",
-    "no_supported_entities": "У этого устройства ESPHome нет элементов, которые поддерживает Homey.",
     "device_not_connected": "Устройство ESPHome не подключено",
     "device_not_prepared": "Устройство не готово. Вернись назад и подключись снова.",
     "no_device_selected": "Устройство не выбрано",
@@ -68,7 +67,9 @@
       "ssid_too_long": "SSID или пароль слишком длинные",
       "invalid_value": "Устройство Improv отправило недопустимое значение"
     },
-    "project_not_supported": "Этот проект ESPHome не поддерживается этим приложением Homey."
+    "project_not_supported": "Этот проект ESPHome не поддерживается этим приложением Homey.",
+    "setting_invalid": "Это значение недопустимо для устройства.",
+    "entity_missing": "У этого устройства нет объекта __domain__ с именем __name__."
   },
   "nativeAppSuggestion": "Хорошие новости! У этого устройства есть своё приложение! Ищите в Homey App Store __appName__.",
   "repair": {
@@ -103,5 +104,8 @@
     "entities_changed": "У __device__ новые сущности: __added__.",
     "entities_changed_removed": "На __device__ добавлено __added__ и удалено __removed__. Возможно, стоит проверить свои Flows.",
     "entities_removed": "На __device__ удалено __removed__. Возможно, стоит проверить свои Flows."
+  },
+  "settings": {
+    "applied_on_wake": "Сохранено. Устройство спит и получит новую настройку, когда проснётся в следующий раз."
   }
 }
